@@ -120,7 +120,7 @@ terminalColumns(
     tableData,
     (stdoutColumns) => {
         /**
-         * For large screens
+         * For large viewports
          * Split screen automatically
          */
         if (stdoutColumns > 100) {
@@ -136,7 +136,7 @@ terminalColumns(
         }
 
         /**
-         * For medium screens
+         * For medium viewports
          * Break table row into two rows, and add vertical padding to create
          * a divider between rows
          */
@@ -153,7 +153,7 @@ terminalColumns(
         }
 
         /**
-         * For screens smaller than 30 columns
+         * For viewports smaller than or equal to 30 columns
          * In this case, the screen is too small to render anything.
          * Simply remove responsiveness and assume the viewport width
          * is actually 1000 columns.
