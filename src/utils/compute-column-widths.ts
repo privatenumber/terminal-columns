@@ -35,7 +35,7 @@ const initColumns = (
 		) {
 			columns.push({
 				...defaultColumnMetas,
-				width: columnWidth,
+				width: columnWidth as ColumnWidth,
 				contentWidth: columnContentWidths[i],
 			});
 			continue;
