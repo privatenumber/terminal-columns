@@ -9,7 +9,7 @@ Render readable tables in the terminal.
 - Allow rows to overflow into multiple rows
 - Easy to make responsive tables
 
-<!-- → [Try it out online](https://stackblitz.com/) -->
+→ [Try it out online](https://stackblitz.com/edit/terminal-columns-demo?devtoolsheight=50&file=examples/responsive-table.js&view=editor)
 
 <sub>Support this project by ⭐️ starring and sharing it. [Follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
