@@ -28,7 +28,7 @@ export type InternalColumnMeta<Width = ColumnWidth> = {
 export type ColumnMetasArray = (ColumnWidth | ColumnMeta)[];
 
 export type Options = ColumnMetasArray | {
-	columns: ColumnMetasArray;
+	columns?: ColumnMetasArray;
 	stdoutColumns?: number;
 };
 
