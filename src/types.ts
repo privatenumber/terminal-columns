@@ -3,7 +3,7 @@ export type Row = string[];
 export type ColumnWidth = number | 'content-width' | 'auto' | string;
 
 export type ColumnMeta<Width = ColumnWidth> ={
-	width: Width;
+	width?: Width;
 	// TODO: align
 	// align?: string;
 	paddingRight?: number;
