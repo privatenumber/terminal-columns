@@ -1,0 +1,6 @@
+{
+	"preset": "es-jest",
+	"transformIgnorePatterns": [
+		"node_modules/.pnpm(?!/(string-width|wrap-ansi|strip-ansi|ansi-regex|is-fullwidth-code-point|ansi-styles|chalk))"
+	]
+}

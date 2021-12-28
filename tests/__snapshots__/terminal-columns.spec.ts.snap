@@ -1,0 +1,331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`auto event split - many 1`] = `
+"Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   
+sit amet.           sit amet.           sit amet.           sit amet.           sit amet.           
+Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   
+sit amet.           sit amet.           sit amet.           sit amet.           sit amet.           
+Lorem ipsum dolor sit amet.                       Lorem ipsum dolor sit amet.                       "
+`;
+
+exports[`auto event split 1`] = `"Lorem ipsum dolor sit amet.      Lorem ipsum dolor sit amet.      Lorem ipsum dolor sit amet.       "`;
+
+exports[`auto mutli-row 1`] = `
+"Lorem ipsum dolor sit amet.      Lorem ipsum dolor sit amet,      Lorem ipsum dolor sit amet,       
+                                 consectetur adipiscing elit, sed consectetur adipiscing elit, sed  
+                                 do eiusmod tempor incididunt ut  do eiusmod tempor incididunt ut   
+                                 labore et dolore magna aliqua.   labore et dolore magna aliqua.    
+                                 Dictumst quisque sagittis purus  Dictumst quisque sagittis purus   
+                                 sit amet volutpat consequat      sit amet volutpat consequat mauris
+                                 mauris nunc.                     nunc.                             
+                                 Nunc sed augue lacus viverra     Nunc sed augue lacus viverra vitae
+                                 vitae congue eu consequat ac.    congue eu consequat ac.           
+                                 Sit amet porttitor eget dolor    Sit amet porttitor eget dolor     
+                                 morbi non arcu.                  morbi non arcu.                   
+Lorem ipsum dolor sit amet,      Lorem ipsum dolor sit amet,      Lorem ipsum dolor sit amet.       
+consectetur adipiscing elit, sed consectetur adipiscing elit, sed                                   
+do eiusmod tempor incididunt ut  do eiusmod tempor incididunt ut                                    
+labore et dolore magna aliqua.   labore et dolore magna aliqua.                                     "
+`;
+
+exports[`breakpoints stdout: 25 - Too small 1`] = `
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+`;
+
+exports[`breakpoints stdout: 90 - Normal 1`] = `
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua.                                                         
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua.                                                         
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua.                                                         
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua.                                                         "
+`;
+
+exports[`breakpoints stdout: 150 - Very big 1`] = `
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
+                                                                                                                           consectetur adipiscing     
+                                                                                                                           elit, sed do eiusmod tempor
+                                                                                                                           incididunt ut labore et    
+                                                                                                                           dolore magna aliqua.       
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
+                                                                                                                           consectetur adipiscing     
+                                                                                                                           elit, sed do eiusmod tempor
+                                                                                                                           incididunt ut labore et    
+                                                                                                                           dolore magna aliqua.       "
+`;
+
+exports[`content-width content-width with fixed width 1`] = `
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+et dolore magna aliqua.                                                                             
+Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit, sed do eiusmod tempor  
+incididunt ut labore et dolore magna    
+aliqua.                                 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+et dolore magna aliqua.                                                                             
+Lorem ipsum dolor sit amet.             "
+`;
+
+exports[`content-width content-width with overflowing 1`] = `
+"  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut      
+  labore et dolore magna aliqua.                                                                    
+  Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc.                          
+  Nunc sed augue lacus viverra vitae congue eu consequat ac.                                        
+  Sit amet porttitor eget dolor morbi non arcu.                                                     
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut       
+ labore et dolore magna aliqua.                                                                     
+ Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc.                           
+ Nunc sed augue lacus viverra vitae congue eu consequat ac.                                         
+ Sit amet porttitor eget dolor morbi non arcu.                                                      
+                                                                                                    
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+et dolore magna aliqua.                                                                             
+Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc.                            
+Nunc sed augue lacus viverra vitae congue eu consequat ac.                                          
+Sit amet porttitor eget dolor morbi non arcu.                                                       
+                                                                                                    "
+`;
+
+exports[`content-width content-width with padding 1`] = `
+"  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut      
+  labore et dolore magna aliqua.                                                                    
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut       
+ labore et dolore magna aliqua.                                                                     "
+`;
+
+exports[`edge cases inconsistent rows 1`] = `
+"A                                                                                                   
+B                                B                                                                  
+C                                C                                C                                 "
+`;
+
+exports[`padding overflowing content with overflowing padding reduction - even 1`] = `
+"                                                 L                                                  
+                                                 o                                                  
+                                                 r                                                  
+                                                 e                                                  
+                                                 m                                                  
+                                                 i                                                  
+                                                 p                                                  
+                                                 s                                                  
+                                                 u                                                  
+                                                 m                                                  
+                                                 d                                                  
+                                                 o                                                  
+                                                 l                                                  
+                                                 o                                                  
+                                                 r                                                  
+                                                 s                                                  
+                                                 i                                                  
+                                                 t                                                  
+                                                 a                                                  
+                                                 m                                                  
+                                                 e                                                  
+                                                 t                                                  
+                                                 ,                                                  
+                                                 c                                                  
+                                                 o                                                  
+                                                 n                                                  
+                                                 s                                                  
+                                                 e                                                  
+                                                 c                                                  
+                                                 t                                                  
+                                                 e                                                  
+                                                 t                                                  
+                                                 u                                                  
+                                                 r                                                  
+                                                 a                                                  
+                                                 d                                                  
+                                                 i                                                  
+                                                 p                                                  
+                                                 i                                                  
+                                                 s                                                  
+                                                 c                                                  
+                                                 i                                                  
+                                                 n                                                  
+                                                 g                                                  
+                                                 e                                                  
+                                                 l                                                  
+                                                 i                                                  
+                                                 t                                                  
+                                                 ,                                                  
+                                                 s                                                  
+                                                 e                                                  
+                                                 d                                                  
+                                                 d                                                  
+                                                 o                                                  
+                                                 e                                                  
+                                                 i                                                  
+                                                 u                                                  
+                                                 s                                                  
+                                                 m                                                  
+                                                 o                                                  
+                                                 d                                                  
+                                                 t                                                  
+                                                 e                                                  
+                                                 m                                                  
+                                                 p                                                  
+                                                 o                                                  
+                                                 r                                                  
+                                                 i                                                  
+                                                 n                                                  
+                                                 c                                                  
+                                                 i                                                  
+                                                 d                                                  
+                                                 i                                                  
+                                                 d                                                  
+                                                 u                                                  
+                                                 n                                                  
+                                                 t                                                  
+                                                 u                                                  
+                                                 t                                                  
+                                                 l                                                  
+                                                 a                                                  
+                                                 b                                                  
+                                                 o                                                  
+                                                 r                                                  
+                                                 e                                                  
+                                                 e                                                  
+                                                 t                                                  
+                                                 d                                                  
+                                                 o                                                  
+                                                 l                                                  
+                                                 o                                                  
+                                                 r                                                  
+                                                 e                                                  
+                                                 m                                                  
+                                                 a                                                  
+                                                 g                                                  
+                                                 n                                                  
+                                                 a                                                  
+                                                 a                                                  
+                                                 l                                                  
+                                                 i                                                  
+                                                 q                                                  
+                                                 u                                                  
+                                                 a                                                  
+                                                 .                                                  "
+`;
+
+exports[`padding overflowing padding reduction - even 1`] = `
+"                                                 L                                                  
+                                                 o                                                  
+                                                 r                                                  
+                                                 e                                                  
+                                                 m                                                  
+                                                 i                                                  
+                                                 p                                                  
+                                                 s                                                  
+                                                 u                                                  
+                                                 m                                                  
+                                                 d                                                  
+                                                 o                                                  
+                                                 l                                                  
+                                                 o                                                  
+                                                 r                                                  
+                                                 s                                                  
+                                                 i                                                  
+                                                 t                                                  
+                                                 a                                                  
+                                                 m                                                  
+                                                 e                                                  
+                                                 t                                                  
+                                                 .                                                  "
+`;
+
+exports[`padding overflowing padding reduction - uneven 1`] = `
+"                                                                  L                                 
+                                                                  o                                 
+                                                                  r                                 
+                                                                  e                                 
+                                                                  m                                 
+                                                                  i                                 
+                                                                  p                                 
+                                                                  s                                 
+                                                                  u                                 
+                                                                  m                                 
+                                                                  d                                 
+                                                                  o                                 
+                                                                  l                                 
+                                                                  o                                 
+                                                                  r                                 
+                                                                  s                                 
+                                                                  i                                 
+                                                                  t                                 
+                                                                  a                                 
+                                                                  m                                 
+                                                                  e                                 
+                                                                  t                                 
+                                                                  .                                 "
+`;
+
+exports[`percent widths 50% 50% 1`] = `
+"Lorem ipsum dolor sit amet, consectetur adipiscingLorem ipsum dolor sit amet, consectetur adipiscing
+elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore  
+et dolore magna aliqua.                           et dolore magna aliqua.                           "
+`;
+
+exports[`percent widths 50% 50% with padding 1`] = `
+"      Lorem ipsum dolor sit amet, consectetur        Lorem ipsum dolor sit amet,                    
+      adipiscing elit, sed do eiusmod tempor         consectetur adipiscing elit, sed do            
+      incididunt ut labore et dolore magna           eiusmod tempor incididunt ut labore et         
+      aliqua.                                        dolore magna aliqua.                           "
+`;
+
+exports[`percent widths 70% 30% with different content lengths 1`] = `
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do       Lorem ipsum dolor sit amet,   
+eiusmod tempor incididunt ut labore et dolore magna aliqua.           consectetur adipiscing elit,  
+                                                                      sed do eiusmod tempor         
+                                                                      incididunt ut labore et dolore
+                                                                      magna aliqua.                 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do       Lorem ipsum dolor sit amet.   
+eiusmod tempor incididunt ut labore et dolore magna aliqua.                                         "
+`;
+
+exports[`percent widths 100% 100% with padding 1`] = `
+"                                                                                                    
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut      
+  labore et dolore magna aliqua.                                                                    
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut    
+    labore et dolore magna aliqua.                                                                  
+                                                                                                    "
+`;
+
+exports[`static widths fixed width 1`] = `
+"Lorem     Lorem ipsum dolor   
+ipsum     sit amet,           
+dolor sit consectetur         
+amet.     adipiscing elit, sed
+          do eiusmod tempor   
+          incididunt ut labore
+          et dolore magna     
+          aliqua.             "
+`;
+
+exports[`static widths overflowing rows 1`] = `
+"Lorem     
+ipsum     
+dolor sit 
+amet.     
+Lorem ipsum dolor sit amet.                                                                         
+Lorem     
+ipsum     
+dolor sit 
+amet.     
+Lorem ipsum dolor sit amet.                                                                         "
+`;
+
+exports[`static widths overflowing width 1`] = `
+"Lorem ipsum dolor sit amet.                                                                         
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+et dolore magna aliqua.                                                                             "
+`;
+
+exports[`static widths overflowing width with padding 1`] = `
+"      Lorem ipsum dolor sit amet.                                                                   
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt        
+   ut labore et dolore magna aliqua.                                                                "
+`;
