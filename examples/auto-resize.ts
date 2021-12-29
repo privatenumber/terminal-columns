@@ -19,8 +19,7 @@ const tableData = [
 
 const renderTable = () => {
 	const table = terminalColumns(tableData);
-	process.stdout.write(ansiEscapes.clearTerminal);
-	process.stdout.write(table);
+	process.stdout.write(ansiEscapes.clearTerminal + table);
 };
 
 process.stdout.on('resize', renderTable);
