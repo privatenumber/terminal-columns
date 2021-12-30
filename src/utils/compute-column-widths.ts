@@ -8,6 +8,7 @@ const isPercentPattern = /^\d+%$/;
 
 const defaultColumnMetas: InternalColumnMeta = {
 	width: 'auto',
+	align: 'left',
 	contentWidth: 0,
 	paddingLeft: 0,
 	paddingRight: 0,

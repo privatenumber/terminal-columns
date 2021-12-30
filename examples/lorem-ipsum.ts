@@ -23,10 +23,12 @@ const renderTable = (stdoutColumns: number) => {
 		stdoutColumns,
 		columns: [
 			{
+				align: 'right',
 				paddingRight: 4,
 				paddingBottom: 1,
 			},
 			{
+				align: 'right',
 				paddingRight: 4,
 				paddingBottom: 1,
 			},

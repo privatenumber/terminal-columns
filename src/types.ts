@@ -2,24 +2,20 @@ export type Row = string[];
 
 export type ColumnWidth = number | 'content-width' | 'auto' | string;
 
+type Alignment = 'left' | 'right';
+
 export type ColumnMeta<Width = ColumnWidth> ={
 	width?: Width;
-	// TODO: align
-	// align?: string;
+	align?: Alignment;
 	paddingRight?: number;
 	paddingLeft?: number;
 	paddingTop?: number;
 	paddingBottom?: number;
 };
 
-export type InternalColumnMeta<Width = ColumnWidth> = {
-	width: Width;
+export type InternalColumnMeta<Width = ColumnWidth> = Required<ColumnMeta<Width>> & {
 	autoOverflow?: number;
 	contentWidth: number;
-	paddingRight: number;
-	paddingLeft: number;
-	paddingTop: number;
-	paddingBottom: number;
 	paddingLeftString: string;
 	paddingRightString: string;
 	horizontalPadding: number;

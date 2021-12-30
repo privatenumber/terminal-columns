@@ -116,6 +116,20 @@ terminalColumns(
 )
 ```
 
+### Right align text
+You can align the content of the column by setting `align: 'right'`.
+
+```ts
+terminalColumns(
+    tableData,
+    [
+        {
+            align: 'right'
+        }
+    ]
+)
+```
+
 ### Responsive table by terminal width
 You can make the table responsive by passing in a function that computes the column width allocation based on the detected viewport width.
 
@@ -220,6 +234,7 @@ type ColumnMeta = {
     paddingLeft?: number
     paddingTop?: number
     paddingBottom?: number
+    align?: 'left' | 'right'
 }
 ```
 
@@ -266,4 +281,9 @@ Type: `number`
 
 How many new lines to the bottom the column should have
 
+##### align
+Type: `'left' | 'right'`
 
+Default: `'left'`
+
+Whether to align the text to the left or right.
