@@ -7,13 +7,14 @@
 
 import { promisify } from 'util';
 import ansiEscapes from 'ansi-escapes';
+import { red, blue, green } from 'colorette';
 import terminalColumns from '../src';
 
 const tableData = [
 	[
-		'A'.repeat(20),
-		'B'.repeat(30),
-		'C'.repeat(40),
+		red('A'.repeat(20)),
+		blue('B'.repeat(30)),
+		green('C'.repeat(40)),
 	],
 ];
 

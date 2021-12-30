@@ -1,4 +1,6 @@
 import wrapAnsi from 'wrap-ansi';
+import stringWidth from 'string-width';
+
 import type { Row, InternalColumnMeta } from '../types';
 import { getLongestLineWidth } from './get-longest-line-width';
 
@@ -54,7 +56,7 @@ export function renderRow(
 					return (
 						column.paddingLeftString
 						+ cellLine
-						+ ' '.repeat(column.width - cellLine.length)
+						+ ' '.repeat(column.width - stringWidth(cellLine))
 						+ column.paddingRightString
 					);
 				})
