@@ -3,7 +3,7 @@
 Readable tables for the terminal.
 
 <p align="center">
-    <img src=".github/demo.gif" width="400">
+    <img src=".github/demo.gif" width="450">
     <br>
     <em>Tables can be automatically responsive!</em>
 </p>
