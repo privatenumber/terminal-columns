@@ -3,16 +3,17 @@
 Readable tables for the terminal.
 
 <p align="center">
-    <img src=".github/demo.gif" width="400">
+    <img src=".github/demo.gif" width="450">
     <br>
     <em>Tables can be automatically responsive!</em>
 </p>
 
 ### Features
-- Wrap content to fit the column width
-- Supports column widths `auto`, `content-width`, viewport percents & static values
-- Supports horizontal & vertical padding
-- Allow rows to overflow into multiple rows
+- Content wrapped to fit column width
+- Column widths `auto`, `content-width`, viewport percents & static values
+- Align left & right
+- Horizontal & vertical padding
+- Rows can overflow into multiple rows
 - Easy to make responsive tables
 
 → [Try it out online](https://stackblitz.com/edit/terminal-columns-demo?devtoolsheight=50&file=examples/responsive-table.js&view=editor)
@@ -111,6 +112,20 @@ terminalColumns(
         },
         {
             paddingBottom: 2 // Pad the bottom of the cell with 2 lines
+        }
+    ]
+)
+```
+
+### Right align text
+You can align the content of the column by setting `align: 'right'`.
+
+```ts
+terminalColumns(
+    tableData,
+    [
+        {
+            align: 'right'
         }
     ]
 )
@@ -220,6 +235,7 @@ type ColumnMeta = {
     paddingLeft?: number
     paddingTop?: number
     paddingBottom?: number
+    align?: 'left' | 'right'
 }
 ```
 
@@ -266,4 +282,9 @@ Type: `number`
 
 How many new lines to the bottom the column should have
 
+##### align
+Type: `'left' | 'right'`
 
+Default: `'left'`
+
+Whether to align the text to the left or right.
