@@ -52,13 +52,20 @@ export function renderRow(
 			const rowLine = subRowWithData
 				.map((column) => {
 					const cellLine = column.lines[i] ?? '';
+					const lineFiller = ' '.repeat(column.width - stringWidth(cellLine));
+					let text = column.paddingLeftString;
 
-					return (
-						column.paddingLeftString
-						+ cellLine
-						+ ' '.repeat(column.width - stringWidth(cellLine))
-						+ column.paddingRightString
-					);
+					if (column.align === 'right') {
+						text += lineFiller;
+					}
+
+					text += cellLine;
+
+					if (column.align === 'left') {
+						text += lineFiller;
+					}
+
+					return text + column.paddingRightString;
 				})
 				.join('');
 
