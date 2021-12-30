@@ -7,7 +7,7 @@ import type {
 const isPercentPattern = /^\d+%$/;
 
 const defaultColumnMetas: InternalColumnMeta = {
-	width: 0,
+	width: 'auto',
 	contentWidth: 0,
 	paddingLeft: 0,
 	paddingRight: 0,
@@ -35,7 +35,7 @@ const initColumns = (
 		) {
 			columns.push({
 				...defaultColumnMetas,
-				width: columnWidth,
+				width: columnWidth as ColumnWidth,
 				contentWidth: columnContentWidths[i],
 			});
 			continue;
@@ -44,7 +44,6 @@ const initColumns = (
 		if (
 			columnWidth
 			&& (typeof columnWidth === 'object')
-			&& ('width' in columnWidth)
 		) {
 			const column = {
 				...defaultColumnMetas,

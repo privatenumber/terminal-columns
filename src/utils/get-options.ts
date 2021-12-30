@@ -15,10 +15,7 @@ export const getOptions = (
 	const stdoutColumns = process.stdout.columns ?? Number.POSITIVE_INFINITY;
 
 	if (!options) {
-		return {
-			columns: [],
-			stdoutColumns,
-		};
+		options = {};
 	}
 
 	if (typeof options === 'function') {
@@ -32,12 +29,8 @@ export const getOptions = (
 		};
 	}
 
-	if (!('columns' in options)) {
-		throw new Error('Invalid options');
-	}
-
 	return {
-		columns: options.columns,
+		columns: options.columns ?? [],
 		stdoutColumns: options.stdoutColumns ?? stdoutColumns,
 	};
 };

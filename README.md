@@ -1,15 +1,21 @@
 # terminal-columns <!-- <a href="https://npm.im/terminal-columns"><img src="https://badgen.net/npm/v/terminal-columns"></a> <a href="https://npm.im/terminal-columns"><img src="https://badgen.net/npm/dm/terminal-columns"></a> <a href="https://packagephobia.now.sh/result?p=terminal-columns"><img src="https://packagephobia.now.sh/badge?p=terminal-columns"></a> -->
 
-Render readable tables in the terminal.
+Readable tables for the terminal.
+
+<p align="center">
+    <img src=".github/demo.gif" width="400">
+    <br>
+    <em>Tables can be automatically responsive!</em>
+</p>
 
 ### Features
-- Automatically wrap content to fit the column width
+- Wrap content to fit the column width
 - Supports column widths `auto`, `content-width`, viewport percents & static values
 - Supports horizontal & vertical padding
 - Allow rows to overflow into multiple rows
 - Easy to make responsive tables
 
-<!-- → [Try it out online](https://stackblitz.com/) -->
+→ [Try it out online](https://stackblitz.com/edit/terminal-columns-demo?devtoolsheight=50&file=examples/responsive-table.js&view=editor)
 
 <sub>Support this project by ⭐️ starring and sharing it. [Follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 

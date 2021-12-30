@@ -34,6 +34,7 @@
 	"scripts": {
 		"build": "tsup src/index.ts --clean --dts --minify --format esm,cjs",
 		"lint": "eslint .",
+		"typecheck": "tsc --noEmit",
 		"pretest": "npm run build",
 		"test": "jest"
 	},
@@ -44,6 +45,7 @@
 	},
 	"lint-staged": {
 		"*.ts": [
+			"npm run typecheck",
 			"eslint",
 			"jest --bail --findRelatedTests"
 		]
