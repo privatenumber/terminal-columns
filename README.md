@@ -9,10 +9,11 @@ Readable tables for the terminal.
 </p>
 
 ### Features
-- Wrap content to fit the column width
-- Supports column widths `auto`, `content-width`, viewport percents & static values
-- Supports horizontal & vertical padding
-- Allow rows to overflow into multiple rows
+- Content wrapped to fit column width
+- Column widths `auto`, `content-width`, viewport percents & static values
+- Align left & right
+- Horizontal & vertical padding
+- Rows can overflow into multiple rows
 - Easy to make responsive tables
 
 → [Try it out online](https://stackblitz.com/edit/terminal-columns-demo?devtoolsheight=50&file=examples/responsive-table.js&view=editor)
