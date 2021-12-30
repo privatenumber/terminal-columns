@@ -28,7 +28,6 @@ const renderTable = (stdoutColumns: number) => {
 				paddingBottom: 1,
 			},
 			{
-				align: 'right',
 				paddingRight: 4,
 				paddingBottom: 1,
 			},
