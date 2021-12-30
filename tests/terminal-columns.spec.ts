@@ -1,3 +1,4 @@
+import { blue, bold, underline } from 'colorette';
 /**
  * Dependencies are bundled in because they have a
  * higher Node.js requirement. Test compiled version
@@ -63,6 +64,16 @@ describe('edge cases', () => {
 			['A'],
 			['B', 'B'],
 			['C', 'C', 'C'],
+		]);
+
+		expect(table).toMatchSnapshot();
+	});
+
+	test('colored text', () => {
+		const table = terminalColumns([
+			[blue('A'.repeat(2))],
+			['B', bold('B'.repeat(3))],
+			['C', 'C', underline('C'.repeat(4))],
 		]);
 
 		expect(table).toMatchSnapshot();

@@ -96,6 +96,12 @@ exports[`content-width content-width with padding 1`] = `
  labore et dolore magna aliqua.                                                                     "
 `;
 
+exports[`edge cases colored text 1`] = `
+"[34mAA[39m                                                                                                  
+B                               [1mBBB[22m                                                                 
+C                               C                                [4mCCCC[24m                               "
+`;
+
 exports[`edge cases inconsistent rows 1`] = `
 "A                                                                                                   
 B                                B                                                                  

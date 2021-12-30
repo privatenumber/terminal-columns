@@ -7,13 +7,14 @@
  */
 
 import ansiEscapes from 'ansi-escapes';
+import { bold, underline, italic } from 'colorette';
 import terminalColumns from '../src';
 
 const tableData = [
 	[
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id neque aliquam vestibulum morbi blandit cursus risus at.',
-		'Sit amet luctus venenatis lectus magna. Nisi porta lorem mollis aliquam ut porttitor leo a. Sem integer vitae justo eget magna. Erat pellentesque adipiscing commodo elit.',
-		'Ultrices tincidunt arcu non sodales neque. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Libero enim sed faucibus turpis in eu mi bibendum neque.',
+		italic('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id neque aliquam vestibulum morbi blandit cursus risus at.'),
+		underline('Sit amet luctus venenatis lectus magna. Nisi porta lorem mollis aliquam ut porttitor leo a. Sem integer vitae justo eget magna. Erat pellentesque adipiscing commodo elit.'),
+		bold('Ultrices tincidunt arcu non sodales neque. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Libero enim sed faucibus turpis in eu mi bibendum neque.'),
 	],
 ];
 
