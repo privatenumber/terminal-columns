@@ -29,8 +29,30 @@ labore et dolore magna aliqua.   labore et dolore magna aliqua.                 
 `;
 
 exports[`breakpoints stdout: 25 - Too small 1`] = `
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+"Lorem ipsum dolor sit    
+amet, consectetur        
+adipiscing elit, sed do  
+eiusmod tempor incididunt
+ut labore et dolore magna
+aliqua.                  
+Lorem ipsum dolor sit    
+amet, consectetur        
+adipiscing elit, sed do  
+eiusmod tempor incididunt
+ut labore et dolore magna
+aliqua.                  
+Lorem ipsum dolor sit    
+amet, consectetur        
+adipiscing elit, sed do  
+eiusmod tempor incididunt
+ut labore et dolore magna
+aliqua.                  
+Lorem ipsum dolor sit    
+amet, consectetur        
+adipiscing elit, sed do  
+eiusmod tempor incididunt
+ut labore et dolore magna
+aliqua.                  "
 `;
 
 exports[`breakpoints stdout: 90 - Normal 1`] = `
@@ -94,6 +116,35 @@ exports[`content-width content-width with padding 1`] = `
   labore et dolore magna aliqua.                                                                    
  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut       
  labore et dolore magna aliqua.                                                                     "
+`;
+
+exports[`custom breakpoints function stdout: 25 - Too small 1`] = `
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+`;
+
+exports[`custom breakpoints function stdout: 90 - Normal 1`] = `
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua.                                                         
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua.                                                         
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua.                                                         
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua.                                                         "
+`;
+
+exports[`custom breakpoints function stdout: 150 - Very big 1`] = `
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
+                                                                                                                           consectetur adipiscing     
+                                                                                                                           elit, sed do eiusmod tempor
+                                                                                                                           incididunt ut labore et    
+                                                                                                                           dolore magna aliqua.       
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
+                                                                                                                           consectetur adipiscing     
+                                                                                                                           elit, sed do eiusmod tempor
+                                                                                                                           incididunt ut labore et    
+                                                                                                                           dolore magna aliqua.       "
 `;
 
 exports[`edge cases colored text 1`] = `

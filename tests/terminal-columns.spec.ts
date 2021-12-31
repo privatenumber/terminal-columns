@@ -4,8 +4,8 @@ import { blue, bold, underline } from 'colorette';
  * higher Node.js requirement. Test compiled version
  * to verify it works with Node.js 12.
  */
-import terminalColumns from '..';
-// import terminalColumns from '../src';
+import terminalColumns, { breakpoints } from '..';
+// import terminalColumns, { breakpoints } from '../src';
 
 const loremIpsumShort = 'Lorem ipsum dolor sit amet.';
 const loremIpsumLong = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
@@ -403,6 +403,46 @@ describe('auto', () => {
 });
 
 describe('breakpoints', () => {
+	const getTable = () => terminalColumns(
+		[
+			[loremIpsumLong, loremIpsumLong],
+			[loremIpsumLong, loremIpsumLong],
+		],
+		breakpoints({
+			// Large screens
+			'>= 90': ['content-width', 'auto'],
+
+			// Normal screens
+			'>= 25': ['100%', '100%'],
+
+			'>= 0': {
+				columns: ['content-width', 'content-width'],
+				stdoutColumns: Number.POSITIVE_INFINITY,
+			},
+		}),
+	);
+
+	test('stdout: 25 - Too small', () => {
+		process.stdout.columns = 25;
+		const table = getTable();
+		expect(table).toMatchSnapshot();
+	});
+
+	test('stdout: 90 - Normal', () => {
+		process.stdout.columns = 90;
+		const table = getTable();
+		expect(table).toMatchSnapshot();
+	});
+
+	test('stdout: 150 - Very big', () => {
+		process.stdout.columns = 150;
+		const table = getTable();
+
+		expect(table).toMatchSnapshot();
+	});
+});
+
+describe('custom breakpoints function', () => {
 	const getTable = () => terminalColumns(
 		[
 			[loremIpsumLong, loremIpsumLong],
