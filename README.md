@@ -135,7 +135,7 @@ terminalColumns(
 Define breakpoints declaratively with the `breakpoints` function.
 
 ```ts
-import terminalColumns, { breapoints } from 'terminal-columns'
+import terminalColumns, { breakpoints } from 'terminal-columns'
 
 terminalColumns(
     tableData,
