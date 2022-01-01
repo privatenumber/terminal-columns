@@ -14,12 +14,12 @@ export const getOptions = (
 ): InternalOptions => {
 	const stdoutColumns = process.stdout.columns ?? Number.POSITIVE_INFINITY;
 
-	if (!options) {
-		options = {};
-	}
-
 	if (typeof options === 'function') {
 		options = options(stdoutColumns);
+	}
+
+	if (!options) {
+		options = {};
 	}
 
 	if (Array.isArray(options)) {
