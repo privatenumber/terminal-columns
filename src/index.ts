@@ -1,5 +1,6 @@
 import { terminalColumns } from './terminal-columns';
 import { breakpoints } from './breakpoints';
+import type { Options } from './types';
 
 export {
 	// eslint-disable-next-line unicorn/prefer-export-from
@@ -7,4 +8,7 @@ export {
 
 	// eslint-disable-next-line unicorn/prefer-export-from
 	breakpoints,
+
+	// eslint-disable-next-line unicorn/prefer-export-from
+	Options,
 };
