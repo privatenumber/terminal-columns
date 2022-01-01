@@ -131,7 +131,32 @@ terminalColumns(
 )
 ```
 
-### Responsive table by terminal width
+### Responsive table with breakpoints function
+Define breakpoints declaratively with the `breakpoints` function.
+
+```ts
+import terminalColumns, { breapoints } from 'terminal-columns'
+
+terminalColumns(
+    tableData,
+    breakpoints({
+        // Large screens
+        '>= 90': ['content-width', 'auto'],
+
+        // Small screens
+        '>= 25': ['100%', '100%'],
+
+        // Tiny screens - remove responsiveness
+        '>= 0': {
+            columns: ['content-width', 'content-width'],
+            stdoutColumns: Number.POSITIVE_INFINITY
+        }
+    })
+)
+```
+
+
+### Responsive table with custom function
 You can make the table responsive by passing in a function that computes the column width allocation based on the detected viewport width.
 
 For a working example, see [this example](/examples/responsive-table.ts).
@@ -288,3 +313,13 @@ Type: `'left' | 'right'`
 Default: `'left'`
 
 Whether to align the text to the left or right.
+
+### breakpoints(breakpointsMap)
+
+A function to declaratively define breakpoints. Returns a function pass into terminal-columns.
+
+#### breakpointsMap
+
+Type: `Record<string, Options>`
+
+An object mapping breakpoints to options. The key must be in the format: `<operator> <stdout-columns>`. For example, `>= 90` will match if the terminal width is 90 or more.

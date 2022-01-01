@@ -28,4 +28,4 @@ export type Options = ColumnMetasArray | {
 	stdoutColumns?: number;
 };
 
-export type OptionsFunction = (stdoutColumns: number) => Options;
+export type OptionsFunction = (stdoutColumns: number) => Options | undefined;
