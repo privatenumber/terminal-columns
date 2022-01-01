@@ -314,6 +314,12 @@ Default: `'left'`
 
 Whether to align the text to the left or right.
 
-### breakpoints(breakpointsMap: Record<string, Options>)
+### breakpoints(breakpointsMap)
 
 A function to declaratively define breakpoints. Returns a function pass into terminal-columns.
+
+#### breakpointsMap
+
+Type: `Record<string, Options>`
+
+An object mapping breakpoints to options. The key must be in the format: `<operator> <stdout-columns>`. For example, `>= 90` will match if the terminal width is 90 or more.
