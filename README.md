@@ -149,10 +149,10 @@ terminalColumns(
         // Tiny screens - remove responsiveness
         '>= 0': {
             columns: ['content-width', 'content-width'],
-            stdoutColumns: Number.POSITIVE_INFINITY,
-        },
-    }),
-);
+            stdoutColumns: Number.POSITIVE_INFINITY
+        }
+    })
+)
 ```
 
 
