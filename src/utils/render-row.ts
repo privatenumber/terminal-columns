@@ -21,13 +21,24 @@ export function renderRow(
 			let cellText = rowData[columnIndex] ?? '';
 			columnIndex += 1;
 
+			if (column.preprocess) {
+				cellText = column.preprocess(cellText);
+			}
+
 			if (getLongestLineWidth(cellText) > column.width) {
 				cellText = wrapAnsi(cellText, column.width, {
 					hard: true,
 				});
 			}
 
-			const lines = cellText.split('\n');
+			let lines = cellText.split('\n');
+
+			if (column.postprocess) {
+				const { postprocess } = column;
+				lines = lines.map(
+					(line, lineNumber) => postprocess.call(column, line, lineNumber),
+				);
+			}
 
 			if (column.paddingTop) {
 				lines.unshift(...emptyLines(column.paddingTop));
@@ -52,6 +63,7 @@ export function renderRow(
 			const rowLine = subRowWithData
 				.map((column) => {
 					const cellLine = column.lines[i] ?? '';
+
 					const lineFiller = ' '.repeat(column.width - stringWidth(cellLine));
 					let text = column.paddingLeftString;
 
