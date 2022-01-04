@@ -155,6 +155,27 @@ terminalColumns(
 )
 ```
 
+### Preprocess / Postprocess
+Preprocessing and postprocessing can be used to modify the table data before it is rendered. It's primarily designed for formatting purposes and can be useful to style text in a declarative manner.
+
+In this example, the first column spans the entire screen and is transformed to be uppercase on screens smaller than 80 columns.
+
+```ts
+terminalColumns(
+    tableData,
+    breakpoints({
+        // Small screens
+        '< 80': [
+            {
+                width: '100%',
+                preprocess: text => text.toUpperCase()
+            },
+            '100%'
+        ]
+    })
+)
+```
+
 ### Responsive table with custom function
 You can make the table responsive by passing in a function that computes the column width allocation based on the detected viewport width.
 
@@ -312,6 +333,16 @@ Type: `'left' | 'right'`
 Default: `'left'`
 
 Whether to align the text to the left or right.
+
+##### preprocess
+Type: `(cellValue: string) => string`
+
+Function to preprocess the cell value before it is wrapped to the column width.
+
+##### postprocess
+Type: `(line: string, lineNumber: number) => string`
+
+Function to postprocess the individual lines of a cell after it has been wrapped to the column width.
 
 ### breakpoints(breakpointsMap)
 

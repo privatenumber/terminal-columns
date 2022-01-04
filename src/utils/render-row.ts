@@ -31,7 +31,14 @@ export function renderRow(
 				});
 			}
 
-			const lines = cellText.split('\n');
+			let lines = cellText.split('\n');
+
+			if (column.postprocess) {
+				const { postprocess } = column;
+				lines = lines.map(
+					(line, lineNumber) => postprocess.call(column, line, lineNumber),
+				);
+			}
 
 			if (column.paddingTop) {
 				lines.unshift(...emptyLines(column.paddingTop));
@@ -55,11 +62,7 @@ export function renderRow(
 		for (let i = 0; i < maxLines; i += 1) {
 			const rowLine = subRowWithData
 				.map((column) => {
-					let cellLine = column.lines[i] ?? '';
-
-					if (column.postprocess) {
-						cellLine = column.postprocess(cellLine, i);
-					}
+					const cellLine = column.lines[i] ?? '';
 
 					const lineFiller = ' '.repeat(column.width - stringWidth(cellLine));
 					let text = column.paddingLeftString;

@@ -367,6 +367,21 @@ nunc sed augue lacus viverra vitae congue eu consequat ac.
 SIT AMET PORTTITOR EGET DOLOR MORBI NON ARCU.                                                       "
 `;
 
+exports[`process postprocess ignores vertical padding 1`] = `
+"                                                  Lorem ipsum dolor sit amet, consectetur adipiscing
+postprocessed                                     elit, sed do eiusmod tempor incididunt ut labore  
+postprocessed                                     et dolore magna aliqua.                           
+postprocessed                                     Dictumst quisque sagittis purus sit amet volutpat 
+postprocessed                                     consequat mauris nunc.                            
+postprocessed                                     Nunc sed augue lacus viverra vitae congue eu      
+postprocessed                                     consequat ac.                                     
+postprocessed                                     Sit amet porttitor eget dolor morbi non arcu.     
+postprocessed                                                                                       
+                                                                                                    
+                                                                                                    
+                                                                                                    "
+`;
+
 exports[`process preprocess 1`] = `
 "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE 
 ET DOLORE MAGNA ALIQUA.                                                                             

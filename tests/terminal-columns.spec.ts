@@ -197,6 +197,26 @@ describe('process', () => {
 
 		expect(table).toMatchSnapshot();
 	});
+
+	test('postprocess ignores vertical padding', () => {
+		const table = terminalColumns(
+			[
+				[
+					loremIpsumNewLines,
+					loremIpsumNewLines,
+				],
+			],
+			[
+				{
+					postprocess: () => 'postprocessed',
+					paddingTop: 1,
+					paddingBottom: 3,
+				},
+			],
+		);
+
+		expect(table).toMatchSnapshot();
+	});
 });
 
 describe('static widths', () => {
