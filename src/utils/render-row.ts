@@ -21,6 +21,10 @@ export function renderRow(
 			let cellText = rowData[columnIndex] ?? '';
 			columnIndex += 1;
 
+			if (column.preprocess) {
+				cellText = column.preprocess(cellText);
+			}
+
 			if (getLongestLineWidth(cellText) > column.width) {
 				cellText = wrapAnsi(cellText, column.width, {
 					hard: true,
@@ -51,7 +55,12 @@ export function renderRow(
 		for (let i = 0; i < maxLines; i += 1) {
 			const rowLine = subRowWithData
 				.map((column) => {
-					const cellLine = column.lines[i] ?? '';
+					let cellLine = column.lines[i] ?? '';
+
+					if (column.postprocess) {
+						cellLine = column.postprocess(cellLine, i);
+					}
+
 					const lineFiller = ' '.repeat(column.width - stringWidth(cellLine));
 					let text = column.paddingLeftString;
 

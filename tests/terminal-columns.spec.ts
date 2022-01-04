@@ -158,6 +158,47 @@ describe('align', () => {
 	});
 });
 
+describe('process', () => {
+	test('preprocess', () => {
+		const table = terminalColumns(
+			[
+				[
+					loremIpsumNewLines,
+				],
+			],
+			[
+				{
+					preprocess: text => text.toUpperCase(),
+				},
+			],
+		);
+
+		expect(table).toMatchSnapshot();
+	});
+
+	test('postprocess', () => {
+		const table = terminalColumns(
+			[
+				[
+					loremIpsumNewLines,
+				],
+			],
+			[
+				{
+					postprocess: (line, i) => {
+						if (i % 2 === 0) {
+							return line.toUpperCase();
+						}
+						return line.toLowerCase();
+					},
+				},
+			],
+		);
+
+		expect(table).toMatchSnapshot();
+	});
+});
+
 describe('static widths', () => {
 	test('fixed width', () => {
 		const table = terminalColumns(

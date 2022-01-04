@@ -155,7 +155,6 @@ terminalColumns(
 )
 ```
 
-
 ### Responsive table with custom function
 You can make the table responsive by passing in a function that computes the column width allocation based on the detected viewport width.
 
