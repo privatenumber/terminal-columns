@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`align align right 1`] = `
+" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                                                             et dolore magna aliqua.
+                            Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc.
+                                          Nunc sed augue lacus viverra vitae congue eu consequat ac.
+                                                       Sit amet porttitor eget dolor morbi non arcu."
+`;
+
 exports[`auto event split - many 1`] = `
 "Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   
 sit amet.           sit amet.           sit amet.           sit amet.           sit amet.           
@@ -349,6 +357,37 @@ exports[`percent widths 100% 100% with padding 1`] = `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut    
     labore et dolore magna aliqua.                                                                  
                                                                                                     "
+`;
+
+exports[`process postprocess 1`] = `
+"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE 
+et dolore magna aliqua.                                                                             
+DICTUMST QUISQUE SAGITTIS PURUS SIT AMET VOLUTPAT CONSEQUAT MAURIS NUNC.                            
+nunc sed augue lacus viverra vitae congue eu consequat ac.                                          
+SIT AMET PORTTITOR EGET DOLOR MORBI NON ARCU.                                                       "
+`;
+
+exports[`process postprocess ignores vertical padding 1`] = `
+"                                                  Lorem ipsum dolor sit amet, consectetur adipiscing
+postprocessed                                     elit, sed do eiusmod tempor incididunt ut labore  
+postprocessed                                     et dolore magna aliqua.                           
+postprocessed                                     Dictumst quisque sagittis purus sit amet volutpat 
+postprocessed                                     consequat mauris nunc.                            
+postprocessed                                     Nunc sed augue lacus viverra vitae congue eu      
+postprocessed                                     consequat ac.                                     
+postprocessed                                     Sit amet porttitor eget dolor morbi non arcu.     
+postprocessed                                                                                       
+                                                                                                    
+                                                                                                    
+                                                                                                    "
+`;
+
+exports[`process preprocess 1`] = `
+"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE 
+ET DOLORE MAGNA ALIQUA.                                                                             
+DICTUMST QUISQUE SAGITTIS PURUS SIT AMET VOLUTPAT CONSEQUAT MAURIS NUNC.                            
+NUNC SED AUGUE LACUS VIVERRA VITAE CONGUE EU CONSEQUAT AC.                                          
+SIT AMET PORTTITOR EGET DOLOR MORBI NON ARCU.                                                       "
 `;
 
 exports[`static widths fixed width 1`] = `

@@ -139,6 +139,86 @@ describe('padding', () => {
 	});
 });
 
+describe('align', () => {
+	test('align right', () => {
+		const table = terminalColumns(
+			[
+				[
+					loremIpsumNewLines,
+				],
+			],
+			[
+				{
+					align: 'right',
+				},
+			],
+		);
+
+		expect(table).toMatchSnapshot();
+	});
+});
+
+describe('process', () => {
+	test('preprocess', () => {
+		const table = terminalColumns(
+			[
+				[
+					loremIpsumNewLines,
+				],
+			],
+			[
+				{
+					preprocess: text => text.toUpperCase(),
+				},
+			],
+		);
+
+		expect(table).toMatchSnapshot();
+	});
+
+	test('postprocess', () => {
+		const table = terminalColumns(
+			[
+				[
+					loremIpsumNewLines,
+				],
+			],
+			[
+				{
+					postprocess: (line, i) => {
+						if (i % 2 === 0) {
+							return line.toUpperCase();
+						}
+						return line.toLowerCase();
+					},
+				},
+			],
+		);
+
+		expect(table).toMatchSnapshot();
+	});
+
+	test('postprocess ignores vertical padding', () => {
+		const table = terminalColumns(
+			[
+				[
+					loremIpsumNewLines,
+					loremIpsumNewLines,
+				],
+			],
+			[
+				{
+					postprocess: () => 'postprocessed',
+					paddingTop: 1,
+					paddingBottom: 3,
+				},
+			],
+		);
+
+		expect(table).toMatchSnapshot();
+	});
+});
+
 describe('static widths', () => {
 	test('fixed width', () => {
 		const table = terminalColumns(
