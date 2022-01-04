@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`align align right 1`] = `
+" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                                                             et dolore magna aliqua.
+                            Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc.
+                                          Nunc sed augue lacus viverra vitae congue eu consequat ac.
+                                                       Sit amet porttitor eget dolor morbi non arcu."
+`;
+
 exports[`auto event split - many 1`] = `
 "Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   
 sit amet.           sit amet.           sit amet.           sit amet.           sit amet.           

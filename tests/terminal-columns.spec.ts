@@ -139,6 +139,25 @@ describe('padding', () => {
 	});
 });
 
+describe('align', () => {
+	test('align right', () => {
+		const table = terminalColumns(
+			[
+				[
+					loremIpsumNewLines,
+				],
+			],
+			[
+				{
+					align: 'right',
+				},
+			],
+		);
+
+		expect(table).toMatchSnapshot();
+	});
+});
+
 describe('static widths', () => {
 	test('fixed width', () => {
 		const table = terminalColumns(
