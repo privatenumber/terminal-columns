@@ -78,6 +78,18 @@ describe('edge cases', () => {
 
 		expect(table).toMatchSnapshot();
 	});
+
+	test('infinite width', () => {
+		const table = terminalColumns([
+			['A'.repeat(100)],
+			['B', 'B'.repeat(100)],
+			['C', 'C', 'C'.repeat(100)],
+		], {
+			stdoutColumns: Number.POSITIVE_INFINITY,
+		});
+
+		expect(table).toMatchSnapshot();
+	});
 });
 
 describe('padding', () => {
