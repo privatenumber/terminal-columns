@@ -64,7 +64,7 @@ export function renderRow(
 				.map((column) => {
 					const cellLine = column.lines[i] ?? '';
 
-					const lineFiller = ' '.repeat(column.width - stringWidth(cellLine));
+					const lineFiller = Number.isFinite(column.width) ? ' '.repeat(column.width - stringWidth(cellLine)) : '';
 					let text = column.paddingLeftString;
 
 					if (column.align === 'right') {
