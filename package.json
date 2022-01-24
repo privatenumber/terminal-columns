@@ -1,0 +1,72 @@
+{
+	"name": "terminal-columns",
+	"version": "0.0.0-semantic-release",
+	"description": "Render a readable table in the terminal",
+	"keywords": [
+		"cli",
+		"table",
+		"columns",
+		"readable",
+		"wrapping",
+		"responsive",
+		"typescript"
+	],
+	"license": "MIT",
+	"repository": "privatenumber/terminal-columns",
+	"funding": "https://github.com/privatenumber/terminal-columns?sponsor=1",
+	"author": {
+		"name": "Hiroki Osame",
+		"email": "hiroki.osame@gmail.com"
+	},
+	"files": [
+		"dist"
+	],
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"require": "./dist/index.js",
+			"import": "./dist/index.mjs",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"scripts": {
+		"build": "tsup src/index.ts --clean --dts --format esm,cjs",
+		"lint": "eslint .",
+		"typecheck": "tsc --noEmit",
+		"pretest": "npm run build",
+		"test": "jest"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.ts": [
+			"npm run typecheck",
+			"eslint",
+			"jest --bail --findRelatedTests"
+		]
+	},
+	"devDependencies": {
+		"@pvtnbr/eslint-config": "^0.10.3",
+		"@types/jest": "^27.0.3",
+		"@types/wrap-ansi": "^8.0.1",
+		"ansi-escapes": "^5.0.0",
+		"colorette": "^2.0.16",
+		"es-jest": "^1.5.0",
+		"eslint": "^8.5.0",
+		"husky": "^4.3.8",
+		"jest": "^27.4.5",
+		"lint-staged": "^12.1.2",
+		"string-width": "^5.0.1",
+		"tsup": "^5.11.9",
+		"typescript": "^4.5.4",
+		"wrap-ansi": "^8.0.1"
+	},
+	"eslintConfig": {
+		"extends": "@pvtnbr"
+	}
+}
