@@ -1,17 +1,11 @@
 {
 	"compilerOptions": {
-
-		"target": "ES2019",
 		// Node 12
-		"module": "commonjs",
-		"moduleResolution": "node",
+		"target": "ES2019",
+		"module": "Preserve",
 		"strict": true,
-		"declaration": true,
-		"outDir": "dist",
+		"noEmit": true,
 		"esModuleInterop": true,
-		"isolatedModules": true,
+		"skipLibCheck": true,
 	},
-	"include": [
-		"src",
-	],
 }

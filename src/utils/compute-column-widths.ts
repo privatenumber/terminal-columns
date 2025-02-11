@@ -62,7 +62,10 @@ const initColumns = (
 	return columns;
 };
 
-const resolveColumnWidths = <T extends ColumnWidth>(
+const resolveColumnWidths: <T extends ColumnWidth>(
+	columnMetas: InternalColumnMeta<T>[],
+	stdoutWidth: number,
+) => asserts columnMetas is InternalColumnMeta<Exclude<T, 'content-width' | 'auto' | string>>[] = <T extends ColumnWidth>(
 	columnMetas: InternalColumnMeta<T>[],
 	stdoutWidth: number,
 ): asserts columnMetas is InternalColumnMeta<Exclude<T, 'content-width' | 'auto' | string>>[] => {

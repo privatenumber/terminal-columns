@@ -21,35 +21,46 @@
 	"files": [
 		"dist"
 	],
-	"main": "./dist/index.js",
+	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
+	"types": "./dist/index.d.cts",
 	"exports": {
-		".": {
-			"require": "./dist/index.js",
-			"import": "./dist/index.mjs",
-			"types": "./dist/index.d.ts"
+		"require": {
+			"types": "./dist/index.d.cts",
+			"default": "./dist/index.cjs"
+		},
+		"import": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"imports": {
+		"#terminal-columns": {
+			"types": "./src/index.ts",
+			"development": "./src/index.ts",
+			"default": "./dist/index.mjs"
 		}
 	},
 	"packageManager": "pnpm@9.15.4",
 	"scripts": {
-		"build": "tsup src/index.ts --clean --dts --minify --format esm,cjs",
+		"build": "pkgroll --minify",
 		"lint": "lintroll --cache .",
-		"typecheck": "tsc --noEmit",
-		"pretest": "npm run build",
+		"type-check": "tsc",
+		"pretest": "pnpm build",
 		"test": "jest"
 	},
 	"devDependencies": {
 		"@types/jest": "^27.0.3",
+		"@types/node": "^22.13.1",
 		"@types/wrap-ansi": "^8.0.1",
 		"ansi-escapes": "^5.0.0",
 		"colorette": "^2.0.16",
-		"es-jest": "^1.5.0",
-		"jest": "^27.4.5",
+		"es-jest": "^2.1.0",
+		"jest": "^29.7.0",
 		"lintroll": "^1.15.0",
+		"pkgroll": "^2.8.2",
 		"string-width": "^5.0.1",
-		"tsup": "^5.11.9",
-		"typescript": "^4.5.4",
+		"typescript": "^5.7.3",
 		"wrap-ansi": "^8.0.1"
 	}
 }

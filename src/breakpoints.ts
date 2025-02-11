@@ -4,7 +4,7 @@ const allowedOperators = ['<', '>', '=', '>=', '<='] as const;
 
 type Operator = typeof allowedOperators[number];
 
-const assertOperator = (operator: string): asserts operator is Operator => {
+const assertOperator: (operator: string) => asserts operator is Operator = (operator) => {
 	if (!allowedOperators.includes(operator as Operator)) {
 		throw new TypeError(`Invalid breakpoint operator: ${operator}`);
 	}
