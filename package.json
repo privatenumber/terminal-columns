@@ -31,9 +31,10 @@
 			"types": "./dist/index.d.ts"
 		}
 	},
+	"packageManager": "pnpm@9.15.4",
 	"scripts": {
 		"build": "tsup src/index.ts --clean --dts --minify --format esm,cjs",
-		"lint": "eslint .",
+		"lint": "lintroll --cache .",
 		"typecheck": "tsc --noEmit",
 		"pretest": "npm run build",
 		"test": "jest"
@@ -51,23 +52,18 @@
 		]
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config": "^0.10.3",
 		"@types/jest": "^27.0.3",
 		"@types/wrap-ansi": "^8.0.1",
 		"ansi-escapes": "^5.0.0",
 		"colorette": "^2.0.16",
 		"es-jest": "^1.5.0",
-		"eslint": "^8.5.0",
 		"husky": "^4.3.8",
 		"jest": "^27.4.5",
 		"lint-staged": "^12.1.2",
+		"lintroll": "^1.15.0",
 		"string-width": "^5.0.1",
 		"tsup": "^5.11.9",
 		"typescript": "^4.5.4",
 		"wrap-ansi": "^8.0.1"
-	},
-	"eslintConfig": {
-		"extends": "@pvtnbr"
-	},
-	"packageManager": "pnpm@9.15.4"
+	}
 }

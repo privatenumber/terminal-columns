@@ -8,10 +8,10 @@ import { getColumnContentWidths } from './utils/get-column-content-widths';
 import { computeColumnWidths } from './utils/compute-column-widths';
 import { renderRow } from './utils/render-row';
 
-export function terminalColumns(
+export const terminalColumns = (
 	tableData: Row[],
 	options?: Options | OptionsFunction,
-) {
+) => {
 	if (!tableData || tableData.length === 0) {
 		return '';
 	}
@@ -42,4 +42,4 @@ export function terminalColumns(
 			),
 		)
 		.join('\n');
-}
+};

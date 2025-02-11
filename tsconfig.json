@@ -1,17 +1,17 @@
 {
 	"compilerOptions": {
-		"moduleResolution": "node",
-		"isolatedModules": true,
-		"esModuleInterop": true,
-		"declaration": true,
-		"outDir": "dist",
-		"strict": true,
 
+		"target": "ES2019",
 		// Node 12
 		"module": "commonjs",
-		"target": "ES2019",
+		"moduleResolution": "node",
+		"strict": true,
+		"declaration": true,
+		"outDir": "dist",
+		"esModuleInterop": true,
+		"isolatedModules": true,
 	},
 	"include": [
-		"src"
-	]
+		"src",
+	],
 }

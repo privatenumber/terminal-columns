@@ -1,14 +1,14 @@
-import { Options } from './types';
+import type { Options } from './types';
 
 const allowedOperators = ['<', '>', '=', '>=', '<='] as const;
 
 type Operator = typeof allowedOperators[number];
 
-function assertOperator(operator: string): asserts operator is Operator {
+const assertOperator = (operator: string): asserts operator is Operator => {
 	if (!allowedOperators.includes(operator as Operator)) {
 		throw new TypeError(`Invalid breakpoint operator: ${operator}`);
 	}
-}
+};
 
 /**
  * Pass in a map of breakpoints where the key is the breakpoint (e.g. '>= 10')
@@ -46,9 +46,9 @@ function assertOperator(operator: string): asserts operator is Operator {
  * })
  * ```
  */
-export function breakpoints(
+export const breakpoints = (
 	breakpointsMap: Record<string, Options>,
-) {
+) => {
 	const bp = Object.keys(breakpointsMap).map((key) => {
 		const [operator, breakpointString] = key.split(' ');
 		assertOperator(operator);
@@ -91,4 +91,4 @@ export function breakpoints(
 			&& stdoutColumns <= breakpoint
 		)
 	))?.value;
-}
+};
