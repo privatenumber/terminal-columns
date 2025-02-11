@@ -1,7 +1,5 @@
 {
 	"compilerOptions": {
-		// Node 12
-		"target": "ES2019",
 		"module": "Preserve",
 		"strict": true,
 		"noEmit": true,
