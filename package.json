@@ -50,17 +50,17 @@
 		"test": "jest"
 	},
 	"devDependencies": {
-		"@types/jest": "^27.0.3",
+		"@types/jest": "^29.5.14",
 		"@types/node": "^22.13.1",
-		"@types/wrap-ansi": "^8.0.1",
-		"ansi-escapes": "^5.0.0",
+		"@types/wrap-ansi": "^8.1.0",
+		"ansi-escapes": "^7.0.0",
 		"colorette": "^2.0.16",
 		"es-jest": "^2.1.0",
 		"jest": "^29.7.0",
 		"lintroll": "^1.15.0",
 		"pkgroll": "^2.8.2",
-		"string-width": "^5.0.1",
+		"string-width": "^7.2.0",
 		"typescript": "^5.7.3",
-		"wrap-ansi": "^8.0.1"
+		"wrap-ansi": "^9.0.0"
 	}
 }
