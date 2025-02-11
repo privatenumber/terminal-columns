@@ -5,8 +5,7 @@ import { blue, bold, underline } from 'colorette';
  * higher Node.js requirement. Test compiled version
  * to verify it works with Node.js 12.
  */
-import terminalColumns, { breakpoints } from '#terminal-columns';
-// import terminalColumns, { breakpoints } from '../src';
+import { terminalColumns, breakpoints } from '#terminal-columns';
 
 const loremIpsumShort = 'Lorem ipsum dolor sit amet.';
 const loremIpsumLong = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
