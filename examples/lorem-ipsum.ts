@@ -8,7 +8,7 @@
 
 import ansiEscapes from 'ansi-escapes';
 import { bold, underline, italic } from 'colorette';
-import terminalColumns from '../src';
+import { terminalColumns } from '../src';
 
 const tableData = [
 	[
