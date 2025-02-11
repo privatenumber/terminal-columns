@@ -6,7 +6,7 @@
  */
 import { promisify } from 'util';
 import ansiEscapes from 'ansi-escapes';
-import terminalColumns from '../src';
+import { terminalColumns } from '../src';
 
 const tableData = [
 	[

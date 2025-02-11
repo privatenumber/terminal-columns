@@ -30,7 +30,7 @@ npm i terminal-columns
 Render a table by passing table data into `terminal-columns` and writing it to stdout.
 
 ```ts
-import terminalColumns from 'terminal-columns'
+import { terminalColumns } from 'terminal-columns'
 
 // Create table data
 const tableData = [
@@ -135,7 +135,7 @@ terminalColumns(
 Define breakpoints declaratively with the `breakpoints` function.
 
 ```ts
-import terminalColumns, { breakpoints } from 'terminal-columns'
+import { terminalColumns, breakpoints } from 'terminal-columns'
 
 terminalColumns(
     tableData,
