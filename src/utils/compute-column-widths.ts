@@ -62,10 +62,13 @@ const initColumns = (
 	return columns;
 };
 
-function resolveColumnWidths<T extends ColumnWidth>(
+const resolveColumnWidths: <T extends ColumnWidth>(
 	columnMetas: InternalColumnMeta<T>[],
 	stdoutWidth: number,
-): asserts columnMetas is InternalColumnMeta<Exclude<T, 'content-width' | 'auto' | string>>[] {
+) => asserts columnMetas is InternalColumnMeta<Exclude<T, 'content-width' | 'auto' | string>>[] = <T extends ColumnWidth>(
+	columnMetas: InternalColumnMeta<T>[],
+	stdoutWidth: number,
+): asserts columnMetas is InternalColumnMeta<Exclude<T, 'content-width' | 'auto' | string>>[] => {
 	for (const column of columnMetas) {
 		const { width } = column;
 
@@ -120,14 +123,14 @@ function resolveColumnWidths<T extends ColumnWidth>(
 			minimumContentWidth,
 		) as T;
 	}
-}
+};
 
 const makeRow = () => Object.assign([] as InternalColumnMeta<number>[], { columns: 0 });
 
-function balanceAuto(
+const balanceAuto = (
 	columnMetas: InternalColumnMeta<number>[],
 	stdoutWidth: number,
-) {
+) => {
 	// group columns by line span
 	// (given the screen is 100px, how many stdout rows does this row span?)
 	const rows = [makeRow()];
@@ -191,13 +194,13 @@ function balanceAuto(
 	}
 
 	return rows;
-}
+};
 
-export function computeColumnWidths(
+export const computeColumnWidths = (
 	stdoutColumns: number,
 	columnMetas: ColumnMetasArray,
 	columnContentWidths: number[],
-) {
+) => {
 	const columnWidths = initColumns(
 		columnContentWidths,
 		columnMetas,
@@ -206,4 +209,4 @@ export function computeColumnWidths(
 	resolveColumnWidths(columnWidths, stdoutColumns);
 
 	return balanceAuto(columnWidths, stdoutColumns);
-}
+};

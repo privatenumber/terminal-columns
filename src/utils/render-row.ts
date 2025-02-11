@@ -6,10 +6,10 @@ import { getLongestLineWidth } from './get-longest-line-width';
 
 const emptyLines = (length: number) => Array.from({ length }).fill('') as string[];
 
-export function renderRow(
+export const renderRow = (
 	rowColumns: InternalColumnMeta<number>[][],
 	rowData: Row,
-) {
+) => {
 	const subRows: string[] = [];
 
 	let columnIndex = 0;
@@ -88,4 +88,4 @@ export function renderRow(
 	}
 
 	return subRows.join('\n');
-}
+};

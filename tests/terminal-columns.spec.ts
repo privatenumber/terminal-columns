@@ -1,10 +1,11 @@
 import { blue, bold, underline } from 'colorette';
+
 /**
  * Dependencies are bundled in because they have a
  * higher Node.js requirement. Test compiled version
  * to verify it works with Node.js 12.
  */
-import terminalColumns, { breakpoints } from '..';
+import terminalColumns, { breakpoints } from '#terminal-columns';
 // import terminalColumns, { breakpoints } from '../src';
 
 const loremIpsumShort = 'Lorem ipsum dolor sit amet.';
@@ -43,7 +44,7 @@ describe('edge cases', () => {
 
 	describe('empty table', () => {
 		test('no table', () => {
-			// @ts-expect-error test error
+			// @ts-expect-error no args
 			const table = terminalColumns();
 			expect(table).toBe('');
 		});

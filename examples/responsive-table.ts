@@ -71,7 +71,7 @@ const tableData = [
 	],
 ];
 
-function breakpoints(stdoutColumns: number) {
+const breakpoints = (stdoutColumns: number) => {
 	// Large screens - auto
 	if (stdoutColumns > 100) {
 		return [
@@ -143,7 +143,7 @@ function breakpoints(stdoutColumns: number) {
 			},
 		],
 	};
-}
+};
 
 const renderTable = () => {
 	const table = terminalColumns(tableData, breakpoints);
