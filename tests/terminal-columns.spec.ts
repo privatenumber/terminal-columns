@@ -528,6 +528,56 @@ describe('breakpoints', () => {
 	});
 });
 
+describe('breakpoints operators', () => {
+	test('all operators work correctly', () => {
+		// Test each operator independently to avoid overlaps
+
+		// Test exact match
+		const bpExact = breakpoints({ '= 50': 'exact' });
+		expect(bpExact(50)).toBe('exact');
+		expect(bpExact(49)).toBeUndefined();
+		expect(bpExact(51)).toBeUndefined();
+
+		// Test greater than
+		const bpGreater = breakpoints({ '> 60': 'greater' });
+		expect(bpGreater(61)).toBe('greater');
+		expect(bpGreater(60)).toBeUndefined();
+
+		// Test less than
+		const bpLess = breakpoints({ '< 40': 'less' });
+		expect(bpLess(39)).toBe('less');
+		expect(bpLess(40)).toBeUndefined();
+
+		// Test less than or equal
+		const bpLessEqual = breakpoints({ '<= 45': 'less-equal' });
+		expect(bpLessEqual(45)).toBe('less-equal');
+		expect(bpLessEqual(44)).toBe('less-equal');
+		expect(bpLessEqual(46)).toBeUndefined();
+
+		// Test greater than or equal (already tested in main suite but for completeness)
+		const bpGreaterEqual = breakpoints({ '>= 55': 'greater-equal' });
+		expect(bpGreaterEqual(55)).toBe('greater-equal');
+		expect(bpGreaterEqual(56)).toBe('greater-equal');
+		expect(bpGreaterEqual(54)).toBeUndefined();
+	});
+
+	test('invalid operator throws error', () => {
+		expect(() => {
+			breakpoints({
+				'== 50': 'invalid',
+			});
+		}).toThrow('Invalid breakpoint operator: ==');
+	});
+
+	test('invalid breakpoint value throws error', () => {
+		expect(() => {
+			breakpoints({
+				'> abc': 'invalid',
+			});
+		}).toThrow('Invalid breakpoint value: abc');
+	});
+});
+
 describe('custom breakpoints function', () => {
 	const getTable = () => terminalColumns(
 		[

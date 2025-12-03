@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`align align right 1`] = `
-" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
                                                                              et dolore magna aliqua.
                             Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc.
                                           Nunc sed augue lacus viverra vitae congue eu consequat ac.
@@ -9,58 +9,54 @@ exports[`align align right 1`] = `
 `;
 
 exports[`auto event split - many 1`] = `
-"Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   
-sit amet.           sit amet.           sit amet.           sit amet.           sit amet.           
-Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   Lorem ipsum dolor   
-sit amet.           sit amet.           sit amet.           sit amet.           sit amet.           
+"Lorem ipsum dolor siLorem ipsum dolor siLorem ipsum dolor siLorem ipsum dolor siLorem ipsum dolor si
+t amet.             t amet.             t amet.             t amet.             t amet.             
+Lorem ipsum dolor siLorem ipsum dolor siLorem ipsum dolor siLorem ipsum dolor siLorem ipsum dolor si
+t amet.             t amet.             t amet.             t amet.             t amet.             
 Lorem ipsum dolor sit amet.                       Lorem ipsum dolor sit amet.                       "
 `;
 
 exports[`auto event split 1`] = `"Lorem ipsum dolor sit amet.      Lorem ipsum dolor sit amet.      Lorem ipsum dolor sit amet.       "`;
 
 exports[`auto mutli-row 1`] = `
-"Lorem ipsum dolor sit amet.      Lorem ipsum dolor sit amet,      Lorem ipsum dolor sit amet,       
-                                 consectetur adipiscing elit, sed consectetur adipiscing elit, sed  
-                                 do eiusmod tempor incididunt ut  do eiusmod tempor incididunt ut   
-                                 labore et dolore magna aliqua.   labore et dolore magna aliqua.    
-                                 Dictumst quisque sagittis purus  Dictumst quisque sagittis purus   
-                                 sit amet volutpat consequat      sit amet volutpat consequat mauris
-                                 mauris nunc.                     nunc.                             
-                                 Nunc sed augue lacus viverra     Nunc sed augue lacus viverra vitae
-                                 vitae congue eu consequat ac.    congue eu consequat ac.           
-                                 Sit amet porttitor eget dolor    Sit amet porttitor eget dolor     
-                                 morbi non arcu.                  morbi non arcu.                   
-Lorem ipsum dolor sit amet,      Lorem ipsum dolor sit amet,      Lorem ipsum dolor sit amet.       
-consectetur adipiscing elit, sed consectetur adipiscing elit, sed                                   
-do eiusmod tempor incididunt ut  do eiusmod tempor incididunt ut                                    
-labore et dolore magna aliqua.   labore et dolore magna aliqua.                                     "
+"Lorem ipsum dolor sit amet.      Lorem ipsum dolor sit amet, conseLorem ipsum dolor sit amet, consec
+                                 ctetur adipiscing elit, sed do eitetur adipiscing elit, sed do eius
+                                 usmod tempor incididunt ut laboremod tempor incididunt ut labore et
+                                  et dolore magna aliqua.          dolore magna aliqua.             
+                                 Dictumst quisque sagittis purus sDictumst quisque sagittis purus si
+                                 it amet volutpat consequat maurist amet volutpat consequat mauris n
+                                  nunc.                           unc.                              
+                                 Nunc sed augue lacus viverra vitaNunc sed augue lacus viverra vitae
+                                 e congue eu consequat ac.         congue eu consequat ac.          
+                                 Sit amet porttitor eget dolor morSit amet porttitor eget dolor morb
+                                 bi non arcu.                     i non arcu.                       
+Lorem ipsum dolor sit amet, conseLorem ipsum dolor sit amet, conseLorem ipsum dolor sit amet.       
+ctetur adipiscing elit, sed do eictetur adipiscing elit, sed do ei                                  
+usmod tempor incididunt ut laboreusmod tempor incididunt ut labore                                  
+ et dolore magna aliqua.          et dolore magna aliqua.                                           "
 `;
 
 exports[`breakpoints stdout: 25 - Too small 1`] = `
-"Lorem ipsum dolor sit    
-amet, consectetur        
-adipiscing elit, sed do  
-eiusmod tempor incididunt
-ut labore et dolore magna
-aliqua.                  
-Lorem ipsum dolor sit    
-amet, consectetur        
-adipiscing elit, sed do  
-eiusmod tempor incididunt
-ut labore et dolore magna
-aliqua.                  
-Lorem ipsum dolor sit    
-amet, consectetur        
-adipiscing elit, sed do  
-eiusmod tempor incididunt
-ut labore et dolore magna
-aliqua.                  
-Lorem ipsum dolor sit    
-amet, consectetur        
-adipiscing elit, sed do  
-eiusmod tempor incididunt
-ut labore et dolore magna
-aliqua.                  "
+"Lorem ipsum dolor sit ame
+t, consectetur adipiscing
+ elit, sed do eiusmod tem
+por incididunt ut labore 
+et dolore magna aliqua.  
+Lorem ipsum dolor sit ame
+t, consectetur adipiscing
+ elit, sed do eiusmod tem
+por incididunt ut labore 
+et dolore magna aliqua.  
+Lorem ipsum dolor sit ame
+t, consectetur adipiscing
+ elit, sed do eiusmod tem
+por incididunt ut labore 
+et dolore magna aliqua.  
+Lorem ipsum dolor sit ame
+t, consectetur adipiscing
+ elit, sed do eiusmod tem
+por incididunt ut labore 
+et dolore magna aliqua.  "
 `;
 
 exports[`breakpoints stdout: 90 - Normal 1`] = `
@@ -76,37 +72,37 @@ ut labore et dolore magna aliqua.                                               
 
 exports[`breakpoints stdout: 150 - Very big 1`] = `
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
-                                                                                                                           consectetur adipiscing     
-                                                                                                                           elit, sed do eiusmod tempor
-                                                                                                                           incididunt ut labore et    
-                                                                                                                           dolore magna aliqua.       
+                                                                                                                            consectetur adipiscing eli
+                                                                                                                           t, sed do eiusmod tempor in
+                                                                                                                           cididunt ut labore et dolor
+                                                                                                                           e magna aliqua.            
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
-                                                                                                                           consectetur adipiscing     
-                                                                                                                           elit, sed do eiusmod tempor
-                                                                                                                           incididunt ut labore et    
-                                                                                                                           dolore magna aliqua.       "
+                                                                                                                            consectetur adipiscing eli
+                                                                                                                           t, sed do eiusmod tempor in
+                                                                                                                           cididunt ut labore et dolor
+                                                                                                                           e magna aliqua.            "
 `;
 
 exports[`content-width content-width with fixed width 1`] = `
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
 et dolore magna aliqua.                                                                             
 Lorem ipsum dolor sit amet, consectetur 
-adipiscing elit, sed do eiusmod tempor  
-incididunt ut labore et dolore magna    
-aliqua.                                 
+adipiscing elit, sed do eiusmod tempor i
+ncididunt ut labore et dolore magna aliq
+ua.                                     
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
 et dolore magna aliqua.                                                                             
 Lorem ipsum dolor sit amet.             "
 `;
 
 exports[`content-width content-width with overflowing 1`] = `
-"  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut      
-  labore et dolore magna aliqua.                                                                    
+"  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo 
+  re et dolore magna aliqua.                                                                        
   Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc.                          
   Nunc sed augue lacus viverra vitae congue eu consequat ac.                                        
   Sit amet porttitor eget dolor morbi non arcu.                                                     
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut       
- labore et dolore magna aliqua.                                                                     
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo  
+ re et dolore magna aliqua.                                                                         
  Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc.                           
  Nunc sed augue lacus viverra vitae congue eu consequat ac.                                         
  Sit amet porttitor eget dolor morbi non arcu.                                                      
@@ -120,10 +116,10 @@ Sit amet porttitor eget dolor morbi non arcu.
 `;
 
 exports[`content-width content-width with padding 1`] = `
-"  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut      
-  labore et dolore magna aliqua.                                                                    
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut       
- labore et dolore magna aliqua.                                                                     "
+"  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo 
+  re et dolore magna aliqua.                                                                        
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo  
+ re et dolore magna aliqua.                                                                         "
 `;
 
 exports[`custom breakpoints function stdout: 25 - Too small 1`] = `
@@ -144,15 +140,15 @@ ut labore et dolore magna aliqua.                                               
 
 exports[`custom breakpoints function stdout: 150 - Very big 1`] = `
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
-                                                                                                                           consectetur adipiscing     
-                                                                                                                           elit, sed do eiusmod tempor
-                                                                                                                           incididunt ut labore et    
-                                                                                                                           dolore magna aliqua.       
+                                                                                                                            consectetur adipiscing eli
+                                                                                                                           t, sed do eiusmod tempor in
+                                                                                                                           cididunt ut labore et dolor
+                                                                                                                           e magna aliqua.            
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
-                                                                                                                           consectetur adipiscing     
-                                                                                                                           elit, sed do eiusmod tempor
-                                                                                                                           incididunt ut labore et    
-                                                                                                                           dolore magna aliqua.       "
+                                                                                                                            consectetur adipiscing eli
+                                                                                                                           t, sed do eiusmod tempor in
+                                                                                                                           cididunt ut labore et dolor
+                                                                                                                           e magna aliqua.            "
 `;
 
 exports[`edge cases colored text 1`] = `
@@ -179,24 +175,29 @@ exports[`padding overflowing content with overflowing padding reduction - even 1
                                                  r                                                  
                                                  e                                                  
                                                  m                                                  
+                                                                                                    
                                                  i                                                  
                                                  p                                                  
                                                  s                                                  
                                                  u                                                  
                                                  m                                                  
+                                                                                                    
                                                  d                                                  
                                                  o                                                  
                                                  l                                                  
                                                  o                                                  
                                                  r                                                  
+                                                                                                    
                                                  s                                                  
                                                  i                                                  
                                                  t                                                  
+                                                                                                    
                                                  a                                                  
                                                  m                                                  
                                                  e                                                  
                                                  t                                                  
                                                  ,                                                  
+                                                                                                    
                                                  c                                                  
                                                  o                                                  
                                                  n                                                  
@@ -208,6 +209,7 @@ exports[`padding overflowing content with overflowing padding reduction - even 1
                                                  t                                                  
                                                  u                                                  
                                                  r                                                  
+                                                                                                    
                                                  a                                                  
                                                  d                                                  
                                                  i                                                  
@@ -218,16 +220,20 @@ exports[`padding overflowing content with overflowing padding reduction - even 1
                                                  i                                                  
                                                  n                                                  
                                                  g                                                  
+                                                                                                    
                                                  e                                                  
                                                  l                                                  
                                                  i                                                  
                                                  t                                                  
                                                  ,                                                  
+                                                                                                    
                                                  s                                                  
                                                  e                                                  
                                                  d                                                  
+                                                                                                    
                                                  d                                                  
                                                  o                                                  
+                                                                                                    
                                                  e                                                  
                                                  i                                                  
                                                  u                                                  
@@ -235,12 +241,14 @@ exports[`padding overflowing content with overflowing padding reduction - even 1
                                                  m                                                  
                                                  o                                                  
                                                  d                                                  
+                                                                                                    
                                                  t                                                  
                                                  e                                                  
                                                  m                                                  
                                                  p                                                  
                                                  o                                                  
                                                  r                                                  
+                                                                                                    
                                                  i                                                  
                                                  n                                                  
                                                  c                                                  
@@ -251,27 +259,33 @@ exports[`padding overflowing content with overflowing padding reduction - even 1
                                                  u                                                  
                                                  n                                                  
                                                  t                                                  
+                                                                                                    
                                                  u                                                  
                                                  t                                                  
+                                                                                                    
                                                  l                                                  
                                                  a                                                  
                                                  b                                                  
                                                  o                                                  
                                                  r                                                  
                                                  e                                                  
+                                                                                                    
                                                  e                                                  
                                                  t                                                  
+                                                                                                    
                                                  d                                                  
                                                  o                                                  
                                                  l                                                  
                                                  o                                                  
                                                  r                                                  
                                                  e                                                  
+                                                                                                    
                                                  m                                                  
                                                  a                                                  
                                                  g                                                  
                                                  n                                                  
                                                  a                                                  
+                                                                                                    
                                                  a                                                  
                                                  l                                                  
                                                  i                                                  
@@ -287,19 +301,23 @@ exports[`padding overflowing padding reduction - even 1`] = `
                                                  r                                                  
                                                  e                                                  
                                                  m                                                  
+                                                                                                    
                                                  i                                                  
                                                  p                                                  
                                                  s                                                  
                                                  u                                                  
                                                  m                                                  
+                                                                                                    
                                                  d                                                  
                                                  o                                                  
                                                  l                                                  
                                                  o                                                  
                                                  r                                                  
+                                                                                                    
                                                  s                                                  
                                                  i                                                  
                                                  t                                                  
+                                                                                                    
                                                  a                                                  
                                                  m                                                  
                                                  e                                                  
@@ -313,19 +331,23 @@ exports[`padding overflowing padding reduction - uneven 1`] = `
                                                                   r                                 
                                                                   e                                 
                                                                   m                                 
+                                                                                                    
                                                                   i                                 
                                                                   p                                 
                                                                   s                                 
                                                                   u                                 
                                                                   m                                 
+                                                                                                    
                                                                   d                                 
                                                                   o                                 
                                                                   l                                 
                                                                   o                                 
                                                                   r                                 
+                                                                                                    
                                                                   s                                 
                                                                   i                                 
                                                                   t                                 
+                                                                                                    
                                                                   a                                 
                                                                   m                                 
                                                                   e                                 
@@ -335,33 +357,33 @@ exports[`padding overflowing padding reduction - uneven 1`] = `
 
 exports[`percent widths 50% 50% 1`] = `
 "Lorem ipsum dolor sit amet, consectetur adipiscingLorem ipsum dolor sit amet, consectetur adipiscing
-elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore  
+ elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore 
 et dolore magna aliqua.                           et dolore magna aliqua.                           "
 `;
 
 exports[`percent widths 50% 50% with padding 1`] = `
-"      Lorem ipsum dolor sit amet, consectetur        Lorem ipsum dolor sit amet,                    
-      adipiscing elit, sed do eiusmod tempor         consectetur adipiscing elit, sed do            
-      incididunt ut labore et dolore magna           eiusmod tempor incididunt ut labore et         
-      aliqua.                                        dolore magna aliqua.                           "
+"      Lorem ipsum dolor sit amet, consectetur        Lorem ipsum dolor sit amet, consectetu         
+      adipiscing elit, sed do eiusmod tempor i       r adipiscing elit, sed do eiusmod temp         
+      ncididunt ut labore et dolore magna aliq       or incididunt ut labore et dolore magn         
+      ua.                                            a aliqua.                                      "
 `;
 
 exports[`percent widths 70% 30% with different content lengths 1`] = `
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do       Lorem ipsum dolor sit amet,   
-eiusmod tempor incididunt ut labore et dolore magna aliqua.           consectetur adipiscing elit,  
-                                                                      sed do eiusmod tempor         
-                                                                      incididunt ut labore et dolore
-                                                                      magna aliqua.                 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do       Lorem ipsum dolor sit amet.   
-eiusmod tempor incididunt ut labore et dolore magna aliqua.                                         "
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmoLorem ipsum dolor sit amet, co
+d tempor incididunt ut labore et dolore magna aliqua.                 nsectetur adipiscing elit, sed
+                                                                       do eiusmod tempor incididunt 
+                                                                      ut labore et dolore magna aliq
+                                                                      ua.                           
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmoLorem ipsum dolor sit amet.   
+d tempor incididunt ut labore et dolore magna aliqua.                                               "
 `;
 
 exports[`percent widths 100% 100% with padding 1`] = `
 "                                                                                                    
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut      
-  labore et dolore magna aliqua.                                                                    
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab  
+  ore et dolore magna aliqua.                                                                       
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut    
-    labore et dolore magna aliqua.                                                                  
+     labore et dolore magna aliqua.                                                                 
                                                                                                     "
 `;
 
@@ -375,12 +397,12 @@ SIT AMET PORTTITOR EGET DOLOR MORBI NON ARCU.                                   
 
 exports[`process postprocess ignores vertical padding 1`] = `
 "                                                  Lorem ipsum dolor sit amet, consectetur adipiscing
-postprocessed                                     elit, sed do eiusmod tempor incididunt ut labore  
+postprocessed                                      elit, sed do eiusmod tempor incididunt ut labore 
 postprocessed                                     et dolore magna aliqua.                           
 postprocessed                                     Dictumst quisque sagittis purus sit amet volutpat 
 postprocessed                                     consequat mauris nunc.                            
-postprocessed                                     Nunc sed augue lacus viverra vitae congue eu      
-postprocessed                                     consequat ac.                                     
+postprocessed                                     Nunc sed augue lacus viverra vitae congue eu conse
+postprocessed                                     quat ac.                                          
 postprocessed                                     Sit amet porttitor eget dolor morbi non arcu.     
 postprocessed                                                                                       
                                                                                                     
@@ -397,26 +419,23 @@ SIT AMET PORTTITOR EGET DOLOR MORBI NON ARCU.                                   
 `;
 
 exports[`static widths fixed width 1`] = `
-"Lorem     Lorem ipsum dolor   
-ipsum     sit amet,           
-dolor sit consectetur         
-amet.     adipiscing elit, sed
-          do eiusmod tempor   
-          incididunt ut labore
-          et dolore magna     
-          aliqua.             "
+"Lorem ipsuLorem ipsum dolor si
+m dolor sit amet, consectetur 
+t amet.   adipiscing elit, sed
+           do eiusmod tempor i
+          ncididunt ut labore 
+          et dolore magna aliq
+          ua.                 "
 `;
 
 exports[`static widths overflowing rows 1`] = `
-"Lorem     
-ipsum     
-dolor sit 
-amet.     
+"Lorem ipsu
+m dolor si
+t amet.   
 Lorem ipsum dolor sit amet.                                                                         
-Lorem     
-ipsum     
-dolor sit 
-amet.     
+Lorem ipsu
+m dolor si
+t amet.   
 Lorem ipsum dolor sit amet.                                                                         "
 `;
 
@@ -428,6 +447,6 @@ et dolore magna aliqua.                                                         
 
 exports[`static widths overflowing width with padding 1`] = `
 "      Lorem ipsum dolor sit amet.                                                                   
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt        
-   ut labore et dolore magna aliqua.                                                                "
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u      
+   t labore et dolore magna aliqua.                                                                 "
 `;

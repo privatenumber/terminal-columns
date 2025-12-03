@@ -1,5 +1,5 @@
-import wrapAnsi from 'wrap-ansi';
-import stringWidth from 'string-width';
+import wrapAnsi from './wrap-ansi-minimal';
+import stringWidth from './string-width-minimal';
 
 import type { Row, InternalColumnMeta } from '../types';
 import { getLongestLineWidth } from './get-longest-line-width';
