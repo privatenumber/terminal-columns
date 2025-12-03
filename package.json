@@ -50,6 +50,9 @@
 		"test": "jest",
 		"prepack": "pnpm build && clean-pkg-json"
 	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
 	"devDependencies": {
 		"@types/jest": "^30.0.0",
 		"@types/node": "^24.10.1",
