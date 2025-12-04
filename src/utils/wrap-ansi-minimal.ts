@@ -10,6 +10,17 @@ const ansiRegex = /\x1B\[[0-9;]*m/g;
 // Strip ANSI codes from string
 const stripAnsi = (str: string): string => str.replace(ansiRegex, '');
 
+// Extract ANSI codes from a string
+const extractAnsiCodes = (str: string): Array<{code: string; index: number}> => {
+	const codes: Array<{code: string; index: number}> = [];
+	let match;
+	ansiRegex.lastIndex = 0;
+	while ((match = ansiRegex.exec(str)) !== null) {
+		codes.push({ code: match[0], index: match.index });
+	}
+	return codes;
+};
+
 export const wrapAnsi = (str: string, width: number, _options?: { hard?: boolean }): string => {
 	if (!str || width <= 0) {
 		return str || '';
@@ -33,34 +44,51 @@ export const wrapAnsi = (str: string, width: number, _options?: { hard?: boolean
 			continue;
 		}
 
+		// Extract all ANSI codes and their positions
+		const ansiCodes = extractAnsiCodes(line);
+		const plainText = stripAnsi(line);
+
+		// Track which ANSI codes are currently active
+		const openCodes: string[] = [];
+		const closeCodes: string[] = [];
+
+		// Categorize codes (simplified - just track all codes in order)
+		for (const { code } of ansiCodes) {
+			// Reset code (39 = default foreground, 49 = default background, 0 = reset all)
+			if (code.includes('[39m') || code.includes('[49m') || code.includes('[0m')) {
+				closeCodes.push(code);
+			} else {
+				openCodes.push(code);
+			}
+		}
+
 		// Hard wrap - preserve exact spacing and cut at width
-		let remaining = line;
+		let currentPos = 0;
 
-		while (stripAnsi(remaining).length > 0) {
-			// Find where to cut (accounting for ANSI codes)
-			let visualCount = 0;
-			let actualCut = 0;
+		while (currentPos < plainText.length) {
+			const chunkEnd = Math.min(currentPos + width, plainText.length);
+			const chunk = plainText.substring(currentPos, chunkEnd);
 
-			for (let i = 0; i < remaining.length; i += 1) {
-				if (remaining[i] === '\x1B') {
-					// Skip ANSI code
-					const endIndex = remaining.indexOf('m', i);
-					if (endIndex !== -1) {
-						actualCut = endIndex + 1;
-						i = endIndex;
-						continue;
-					}
-				}
-				visualCount += 1;
-				actualCut = i + 1;
-				if (visualCount >= width) break;
+			// For each line after the first, reapply open codes
+			if (currentPos > 0 && openCodes.length > 0) {
+				lines.push(openCodes.join('') + chunk);
+			} else if (currentPos === 0) {
+				// First chunk - include all original ANSI codes at the start
+				const startCodes = ansiCodes
+					.filter(a => a.index === 0)
+					.map(a => a.code)
+					.join('');
+				lines.push(startCodes + chunk);
+			} else {
+				lines.push(chunk);
 			}
 
-			const chunk = remaining.substring(0, actualCut);
-			lines.push(chunk);
+			currentPos = chunkEnd;
+		}
 
-			remaining = remaining.substring(actualCut);
-			if (stripAnsi(remaining).length === 0) break;
+		// Add closing codes to the last line if they exist
+		if (closeCodes.length > 0 && lines.length > 0) {
+			lines[lines.length - 1] += closeCodes.join('');
 		}
 	}
 

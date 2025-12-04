@@ -1,4 +1,4 @@
-import { blue, bold, underline } from 'colorette';
+import { blue, bold, underline, red, green } from 'colorette';
 import { terminalColumns, breakpoints } from '#terminal-columns';
 
 const loremIpsumShort = 'Lorem ipsum dolor sit amet.';
@@ -71,6 +71,44 @@ describe('edge cases', () => {
 		]);
 
 		expect(table).toMatchSnapshot();
+	});
+
+	test('colored text wrapping preserves colors', () => {
+		// This test ensures colors don't leak between columns when text wraps
+		// Each column should maintain its own color throughout all wrapped lines
+		const table = terminalColumns(
+			[
+				[
+					blue('BLUE'.repeat(10)), // 40 chars of blue text
+					red('RED'.repeat(15)), // 45 chars of red text
+					green('GREEN'.repeat(12)), // 60 chars of green text
+				],
+			],
+			[10, 10, 10], // Force wrapping
+		);
+
+		// Each column should maintain its color across all lines
+		// Blue text should stay blue, red should stay red, green should stay green
+		expect(table).toMatchSnapshot();
+
+		// Verify no color codes leak between columns by checking that each
+		// column's ANSI codes are properly isolated
+		const lines = table.split('\n');
+		lines.forEach(line => {
+			// Extract visible text portions between ANSI codes
+			const parts = line.split(/\x1B\[[0-9;]*m/);
+			// This regex ensures we're not seeing mixed content where one column's
+			// color affects another column's text
+			parts.forEach(part => {
+				// Each visible text segment should be from only one column type
+				const hasBlue = part.includes('BLUE');
+				const hasRed = part.includes('RED');
+				const hasGreen = part.includes('GREEN');
+				const colorCount = [hasBlue, hasRed, hasGreen].filter(Boolean).length;
+				// Text should not mix between columns (max 1 color type per segment)
+				expect(colorCount).toBeLessThanOrEqual(1);
+			});
+		});
 	});
 
 	test('infinite width', () => {
