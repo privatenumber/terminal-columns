@@ -4,20 +4,19 @@
  * - Simplified Unicode handling (no full-width emoji support)
  */
 
-const ansiRegex = /\x1B\[[0-9;]*m/g;
+// eslint-disable-next-line no-control-regex -- ANSI escape codes are intentional
+const ansiRegex = /\u001B\[[0-9;]*m/g;
 
-export const stringWidth = (str: string): number => {
-	if (!str || str.length === 0) {
+export const stringWidth = (string_: string): number => {
+	if (!string_ || string_.length === 0) {
 		return 0;
 	}
 
 	// Strip ANSI escape codes
-	const stripped = str.replace(ansiRegex, '');
+	const stripped = string_.replaceAll(ansiRegex, '');
 
 	// For now, just return length
 	// This loses emoji/full-width char support but covers 99% of cases
 	// and saves ~25KB of Unicode tables
 	return stripped.length;
 };
-
-export default stringWidth;

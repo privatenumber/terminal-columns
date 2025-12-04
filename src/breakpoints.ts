@@ -49,7 +49,7 @@ const assertOperator: (operator: string) => asserts operator is Operator = (oper
 export const breakpoints = (
 	breakpointsMap: Record<string, Options>,
 ) => {
-	const bp = Object.keys(breakpointsMap).map((key) => {
+	const mapped = Object.keys(breakpointsMap).map((key) => {
 		const [operator, breakpointString] = key.split(' ');
 		assertOperator(operator);
 
@@ -65,7 +65,10 @@ export const breakpoints = (
 			breakpoint,
 			value,
 		};
-	}).sort(
+	});
+
+	// eslint-disable-next-line unicorn/no-array-sort -- toSorted() is ES2023, we target ES2022
+	const bp = mapped.slice().sort(
 		(a, b) => b.breakpoint - a.breakpoint,
 	);
 

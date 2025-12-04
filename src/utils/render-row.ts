@@ -1,7 +1,7 @@
-import wrapAnsi from './wrap-ansi-minimal';
-import stringWidth from './string-width-minimal';
-
 import type { Row, InternalColumnMeta } from '../types';
+import { wrapAnsi } from './wrap-ansi-minimal';
+import { stringWidth } from './string-width-minimal';
+
 import { getLongestLineWidth } from './get-longest-line-width';
 
 const emptyLines = (length: number) => Array.from({ length }).fill('') as string[];
