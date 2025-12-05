@@ -50,28 +50,79 @@ const wrapLongLine = (line: string, width: number): string[] => {
 		}
 	}
 
-	// Hard wrap - preserve exact spacing and cut at width
-	let currentPos = 0;
+	const startCodes = ansiCodes
+		.filter(a => a.index === 0)
+		.map(a => a.code)
+		.join('');
 
-	while (currentPos < plainText.length) {
-		const chunkEnd = Math.min(currentPos + width, plainText.length);
-		const chunk = plainText.slice(currentPos, chunkEnd);
+	// Split into words
+	const words = plainText.split(' ');
+	let currentLine = '';
+	let isFirstLine = true;
 
-		// For each line after the first, reapply open codes
-		if (currentPos > 0 && openCodes.length > 0) {
-			wrappedLines.push(openCodes.join('') + chunk);
-		} else if (currentPos === 0) {
-			// First chunk - include all original ANSI codes at the start
-			const startCodes = ansiCodes
-				.filter(a => a.index === 0)
-				.map(a => a.code)
-				.join('');
-			wrappedLines.push(startCodes + chunk);
+	for (let i = 0; i < words.length; i += 1) {
+		const word = words[i];
+		const addSpace = currentLine.length > 0;
+		const potentialLine = currentLine + (addSpace ? ' ' : '') + word;
+
+		if (potentialLine.length <= width) {
+			// Word fits on current line
+			currentLine = potentialLine;
+		} else if (word.length > width) {
+			// Word is longer than width, need to hard wrap it
+			if (currentLine) {
+				// Push current line first
+				if (isFirstLine) {
+					wrappedLines.push(startCodes + currentLine);
+					isFirstLine = false;
+				} else if (openCodes.length > 0) {
+					wrappedLines.push(openCodes.join('') + currentLine);
+				} else {
+					wrappedLines.push(currentLine);
+				}
+			}
+
+			// Hard wrap the long word
+			let remainingWord = word;
+			while (remainingWord.length > 0) {
+				const chunk = remainingWord.slice(0, width);
+				remainingWord = remainingWord.slice(width);
+
+				if (isFirstLine) {
+					wrappedLines.push(startCodes + chunk);
+					isFirstLine = false;
+				} else if (openCodes.length > 0) {
+					wrappedLines.push(openCodes.join('') + chunk);
+				} else {
+					wrappedLines.push(chunk);
+				}
+			}
+			currentLine = '';
 		} else {
-			wrappedLines.push(chunk);
+			// Start new line
+			if (currentLine) {
+				if (isFirstLine) {
+					wrappedLines.push(startCodes + currentLine);
+					isFirstLine = false;
+				} else if (openCodes.length > 0) {
+					wrappedLines.push(openCodes.join('') + currentLine);
+				} else {
+					wrappedLines.push(currentLine);
+				}
+			}
+			currentLine = word;
 		}
+	}
 
-		currentPos = chunkEnd;
+	// Add remaining line
+	if (currentLine) {
+		if (isFirstLine) {
+			wrappedLines.push(startCodes + currentLine);
+		} else if (openCodes.length > 0) {
+			wrappedLines.push(openCodes.join('') + currentLine);
+		} else {
+			wrappedLines.push(currentLine);
+		}
 	}
 
 	// Add closing codes to the last line if they exist
