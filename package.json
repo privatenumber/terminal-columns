@@ -48,6 +48,7 @@
 		"type-check": "tsc",
 		"pretest": "pnpm build",
 		"test": "jest",
+		"test:coverage": "jest --coverage",
 		"prepack": "pnpm build && clean-pkg-json"
 	},
 	"engines": {

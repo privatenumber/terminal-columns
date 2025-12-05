@@ -161,6 +161,15 @@ B                               [1mBBB[22m
 C                               C                                [4mCCCC[24m                               "
 `;
 
+exports[`edge cases colored text wrapping preserves colors 1`] = `
+"[34mBLUEBLUEBL[31mREDREDREDR[32mGREENGREEN
+[34mUEBLUEBLUE[31mEDREDREDRE[32mGREENGREEN
+[34mBLUEBLUEBL[31mDREDREDRED[32mGREENGREEN
+[34mUEBLUEBLUE[39m[31mREDREDREDR[32mGREENGREEN
+          [31mEDRED[39m     [32mGREENGREEN
+                    [32mGREENGREEN[39m"
+`;
+
 exports[`edge cases inconsistent rows 1`] = `
 "A                                                                                                   
 B                                B                                                                  

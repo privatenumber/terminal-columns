@@ -1,4 +1,6 @@
-import { blue, bold, underline } from 'colorette';
+import {
+	blue, bold, underline, red, green,
+} from 'colorette';
 import { terminalColumns, breakpoints } from '#terminal-columns';
 
 const loremIpsumShort = 'Lorem ipsum dolor sit amet.';
@@ -71,6 +73,45 @@ describe('edge cases', () => {
 		]);
 
 		expect(table).toMatchSnapshot();
+	});
+
+	test('colored text wrapping preserves colors', () => {
+		// This test ensures colors don't leak between columns when text wraps
+		// Each column should maintain its own color throughout all wrapped lines
+		const table = terminalColumns(
+			[
+				[
+					blue('BLUE'.repeat(10)), // 40 chars of blue text
+					red('RED'.repeat(15)), // 45 chars of red text
+					green('GREEN'.repeat(12)), // 60 chars of green text
+				],
+			],
+			[10, 10, 10], // Force wrapping
+		);
+
+		// Each column should maintain its color across all lines
+		// Blue text should stay blue, red should stay red, green should stay green
+		expect(table).toMatchSnapshot();
+
+		// Verify no color codes leak between columns by checking that each
+		// column's ANSI codes are properly isolated
+		const lines = table.split('\n');
+		lines.forEach((line) => {
+			// Extract visible text portions between ANSI codes
+			// eslint-disable-next-line no-control-regex -- ANSI escape codes are intentional
+			const parts = line.split(/\u001B\[[0-9;]*m/);
+			// This regex ensures we're not seeing mixed content where one column's
+			// color affects another column's text
+			parts.forEach((part) => {
+				// Each visible text segment should be from only one column type
+				const hasBlue = part.includes('BLUE');
+				const hasRed = part.includes('RED');
+				const hasGreen = part.includes('GREEN');
+				const colorCount = [hasBlue, hasRed, hasGreen].filter(Boolean).length;
+				// Text should not mix between columns (max 1 color type per segment)
+				expect(colorCount).toBeLessThanOrEqual(1);
+			});
+		});
 	});
 
 	test('infinite width', () => {
@@ -525,6 +566,56 @@ describe('breakpoints', () => {
 		const table = getTable();
 
 		expect(table).toMatchSnapshot();
+	});
+});
+
+describe('breakpoints operators', () => {
+	test('all operators work correctly', () => {
+		// Test each operator independently to avoid overlaps
+
+		// Test exact match
+		const bpExact = breakpoints({ '= 50': ['auto'] });
+		expect(bpExact(50)).toEqual(['auto']);
+		expect(bpExact(49)).toBeUndefined();
+		expect(bpExact(51)).toBeUndefined();
+
+		// Test greater than
+		const bpGreater = breakpoints({ '> 60': ['auto'] });
+		expect(bpGreater(61)).toEqual(['auto']);
+		expect(bpGreater(60)).toBeUndefined();
+
+		// Test less than
+		const bpLess = breakpoints({ '< 40': ['auto'] });
+		expect(bpLess(39)).toEqual(['auto']);
+		expect(bpLess(40)).toBeUndefined();
+
+		// Test less than or equal
+		const bpLessEqual = breakpoints({ '<= 45': ['auto'] });
+		expect(bpLessEqual(45)).toEqual(['auto']);
+		expect(bpLessEqual(44)).toEqual(['auto']);
+		expect(bpLessEqual(46)).toBeUndefined();
+
+		// Test greater than or equal (already tested in main suite but for completeness)
+		const bpGreaterEqual = breakpoints({ '>= 55': ['auto'] });
+		expect(bpGreaterEqual(55)).toEqual(['auto']);
+		expect(bpGreaterEqual(56)).toEqual(['auto']);
+		expect(bpGreaterEqual(54)).toBeUndefined();
+	});
+
+	test('invalid operator throws error', () => {
+		expect(() => {
+			breakpoints({
+				'== 50': ['auto'],
+			});
+		}).toThrow('Invalid breakpoint operator: ==');
+	});
+
+	test('invalid breakpoint value throws error', () => {
+		expect(() => {
+			breakpoints({
+				'> abc': ['auto'],
+			});
+		}).toThrow('Invalid breakpoint value: abc');
 	});
 });
 
