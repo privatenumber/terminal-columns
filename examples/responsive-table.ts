@@ -4,7 +4,7 @@
  * Run the example:
  * $ npx esno examples/responsive-table.ts
  */
-import { promisify } from 'util';
+import { promisify } from 'node:util';
 import ansiEscapes from 'ansi-escapes';
 import { terminalColumns } from '../src';
 

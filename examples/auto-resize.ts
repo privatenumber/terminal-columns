@@ -5,7 +5,7 @@
  * $ npx esno examples/auto-resize.ts
  */
 
-import { promisify } from 'util';
+import { promisify } from 'node:util';
 import ansiEscapes from 'ansi-escapes';
 import { red, blue, green } from 'colorette';
 import { terminalColumns } from '../src';

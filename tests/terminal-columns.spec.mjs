@@ -1,4 +1,5 @@
 import { blue, bold, underline } from 'colorette';
+import { describe, expect } from 'manten';
 import { terminalColumns, breakpoints } from '#terminal-columns';
 
 const loremIpsumShort = 'Lorem ipsum dolor sit amet.';
@@ -10,12 +11,11 @@ Nunc sed augue lacus viverra vitae congue eu consequat ac.
 Sit amet porttitor eget dolor morbi non arcu.
 `.trim();
 
-beforeAll(() => {
-	process.stdout.columns = 100;
-});
+// Setup stdout columns before tests
+process.stdout.columns = 100;
 
-describe('edge cases', () => {
-	describe('error handling', () => {
+describe('edge cases', async ({ describe, test }) => {
+	describe('error handling', async ({ test }) => {
 		test('missing columns', () => {
 			expect(
 				() => terminalColumns(
@@ -35,7 +35,7 @@ describe('edge cases', () => {
 		});
 	});
 
-	describe('empty table', () => {
+	describe('empty table', async ({ test }) => {
 		test('no table', () => {
 			// @ts-expect-error no args
 			const table = terminalColumns();
@@ -53,27 +53,27 @@ describe('edge cases', () => {
 		});
 	});
 
-	test('inconsistent rows', () => {
+	test('inconsistent rows', ({ expectSnapshot }) => {
 		const table = terminalColumns([
 			['A'],
 			['B', 'B'],
 			['C', 'C', 'C'],
 		]);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('colored text', () => {
+	test('colored text', ({ expectSnapshot }) => {
 		const table = terminalColumns([
 			[blue('A'.repeat(2))],
 			['B', bold('B'.repeat(3))],
 			['C', 'C', underline('C'.repeat(4))],
 		]);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('infinite width', () => {
+	test('infinite width', ({ expectSnapshot }) => {
 		const table = terminalColumns([
 			['A'.repeat(100)],
 			['B', 'B'.repeat(100)],
@@ -82,12 +82,12 @@ describe('edge cases', () => {
 			stdoutColumns: Number.POSITIVE_INFINITY,
 		});
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 });
 
-describe('padding', () => {
-	test('overflowing padding reduction - even', () => {
+describe('padding', async ({ test }) => {
+	test('overflowing padding reduction - even', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[
@@ -103,10 +103,10 @@ describe('padding', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('overflowing padding reduction - uneven', () => {
+	test('overflowing padding reduction - uneven', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[
@@ -122,10 +122,10 @@ describe('padding', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('overflowing content with overflowing padding reduction - even', () => {
+	test('overflowing content with overflowing padding reduction - even', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[
@@ -141,12 +141,12 @@ describe('padding', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 });
 
-describe('align', () => {
-	test('align right', () => {
+describe('align', async ({ test }) => {
+	test('align right', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[
@@ -160,12 +160,12 @@ describe('align', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 });
 
-describe('process', () => {
-	test('preprocess', () => {
+describe('process', async ({ test }) => {
+	test('preprocess', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[
@@ -179,10 +179,10 @@ describe('process', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('postprocess', () => {
+	test('postprocess', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[
@@ -201,10 +201,10 @@ describe('process', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('postprocess ignores vertical padding', () => {
+	test('postprocess ignores vertical padding', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[
@@ -221,12 +221,12 @@ describe('process', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 });
 
-describe('static widths', () => {
-	test('fixed width', () => {
+describe('static widths', async ({ test }) => {
+	test('fixed width', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumShort, loremIpsumLong],
@@ -234,10 +234,10 @@ describe('static widths', () => {
 			[10, 20],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('overflowing width', () => {
+	test('overflowing width', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumShort, loremIpsumLong],
@@ -245,10 +245,10 @@ describe('static widths', () => {
 			[124, 152],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('overflowing rows', () => {
+	test('overflowing rows', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumShort, loremIpsumShort],
@@ -257,10 +257,10 @@ describe('static widths', () => {
 			[10, 100],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('overflowing width with padding', () => {
+	test('overflowing width with padding', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumShort, loremIpsumLong],
@@ -278,12 +278,12 @@ describe('static widths', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 });
 
-describe('percent widths', () => {
-	test('50% 50%', () => {
+describe('percent widths', async ({ test }) => {
+	test('50% 50%', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumLong, loremIpsumLong],
@@ -294,10 +294,10 @@ describe('percent widths', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('50% 50% with padding', () => {
+	test('50% 50% with padding', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumLong, loremIpsumLong],
@@ -316,10 +316,10 @@ describe('percent widths', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('70% 30% with different content lengths', () => {
+	test('70% 30% with different content lengths', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumLong, loremIpsumLong],
@@ -328,10 +328,10 @@ describe('percent widths', () => {
 			['70%', '30%'],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('100% 100% with padding', () => {
+	test('100% 100% with padding', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumLong, loremIpsumLong],
@@ -352,12 +352,12 @@ describe('percent widths', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 });
 
-describe('content-width', () => {
-	test('content-width with fixed width', () => {
+describe('content-width', async ({ test }) => {
+	test('content-width with fixed width', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumLong, loremIpsumLong],
@@ -366,10 +366,10 @@ describe('content-width', () => {
 			['content-width', 40],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('content-width with padding', () => {
+	test('content-width with padding', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumLong, loremIpsumLong],
@@ -388,10 +388,10 @@ describe('content-width', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('content-width with overflowing', () => {
+	test('content-width with overflowing', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumNewLines, loremIpsumNewLines, loremIpsumNewLines],
@@ -415,12 +415,12 @@ describe('content-width', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 });
 
-describe('auto', () => {
-	test('event split', () => {
+describe('auto', async ({ test }) => {
+	test('event split', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[
@@ -436,10 +436,10 @@ describe('auto', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('event split - many', () => {
+	test('event split - many', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[
@@ -473,10 +473,10 @@ describe('auto', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('mutli-row', () => {
+	test('mutli-row', ({ expectSnapshot }) => {
 		const table = terminalColumns(
 			[
 				[loremIpsumShort, loremIpsumNewLines, loremIpsumNewLines],
@@ -484,11 +484,11 @@ describe('auto', () => {
 			],
 		);
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 });
 
-describe('breakpoints', () => {
+describe('breakpoints', async ({ test }) => {
 	const getTable = () => terminalColumns(
 		[
 			[loremIpsumLong, loremIpsumLong],
@@ -508,27 +508,27 @@ describe('breakpoints', () => {
 		}),
 	);
 
-	test('stdout: 25 - Too small', () => {
+	test('stdout: 25 - Too small', ({ expectSnapshot }) => {
 		process.stdout.columns = 25;
 		const table = getTable();
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('stdout: 90 - Normal', () => {
+	test('stdout: 90 - Normal', ({ expectSnapshot }) => {
 		process.stdout.columns = 90;
 		const table = getTable();
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('stdout: 150 - Very big', () => {
+	test('stdout: 150 - Very big', ({ expectSnapshot }) => {
 		process.stdout.columns = 150;
 		const table = getTable();
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 });
 
-describe('custom breakpoints function', () => {
+describe('custom breakpoints function', async ({ test }) => {
 	const getTable = () => terminalColumns(
 		[
 			[loremIpsumLong, loremIpsumLong],
@@ -552,22 +552,22 @@ describe('custom breakpoints function', () => {
 		},
 	);
 
-	test('stdout: 25 - Too small', () => {
+	test('stdout: 25 - Too small', ({ expectSnapshot }) => {
 		process.stdout.columns = 25;
 		const table = getTable();
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('stdout: 90 - Normal', () => {
+	test('stdout: 90 - Normal', ({ expectSnapshot }) => {
 		process.stdout.columns = 90;
 		const table = getTable();
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 
-	test('stdout: 150 - Very big', () => {
+	test('stdout: 150 - Very big', ({ expectSnapshot }) => {
 		process.stdout.columns = 150;
 		const table = getTable();
 
-		expect(table).toMatchSnapshot();
+		expectSnapshot(table);
 	});
 });
