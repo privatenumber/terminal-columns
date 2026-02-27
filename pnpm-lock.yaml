@@ -24,8 +24,8 @@ importers:
         specifier: ^1.27.1
         version: 1.27.1(@types/estree@1.0.8)(@typescript-eslint/utils@8.52.0(eslint@9.39.2)(typescript@5.9.3))(jsonc-eslint-parser@2.4.2)(typescript@5.9.3)
       manten:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^2.0.0
+        version: 2.0.0
       pkgroll:
         specifier: ^2.21.4
         version: 2.21.4(typescript@5.9.3)
@@ -1951,8 +1951,9 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
-  manten@1.10.0:
-    resolution: {integrity: sha512-YcapOHCdvi+Cm6qlxFBTCw/X3WfGahLCBo/OM8Ot3CK7QyT/rZtouDuVbbnkHhgX0g6ZkGMpjKPs0UsL5rWSAQ==}
+  manten@2.0.0:
+    resolution: {integrity: sha512-JjNQq4uObh4oAYvibb8j2IPzg/6Sy8ynvVVQ2rIlOKEF5eCL74bh0uu2pA/nZ36V9ihErgGZgJPE9IaeQhXW5A==}
+    engines: {node: '>=20.20.0'}
 
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
@@ -4657,7 +4658,7 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  manten@1.10.0:
+  manten@2.0.0:
     dependencies:
       expect: 30.2.0
 
