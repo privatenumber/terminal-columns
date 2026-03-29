@@ -1,9 +1,16 @@
 {
 	"compilerOptions": {
+		"rootDir": "./src",
 		"module": "Preserve",
+		"types": [
+			"node",
+		],
 		"strict": true,
 		"noEmit": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 	},
+	"include": [
+		"src",
+	],
 }
