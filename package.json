@@ -64,7 +64,7 @@
 		"pkgroll": "^2.27.0",
 		"skills-npm": "^1.1.1",
 		"string-width": "^8.2.0",
-		"typescript": "^5.9.3",
+		"typescript": "^6.0.2",
 		"wrap-ansi": "^9.0.2"
 	}
 }
