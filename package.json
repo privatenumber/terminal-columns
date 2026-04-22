@@ -41,7 +41,7 @@
 			"default": "./dist/index.mjs"
 		}
 	},
-	"packageManager": "pnpm@10.24.0",
+	"packageManager": "pnpm@10.33.1",
 	"scripts": {
 		"build": "pkgroll --minify",
 		"lint": "lintroll --node --git --cache",
