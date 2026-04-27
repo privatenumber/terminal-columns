@@ -9,20 +9,20 @@ importers:
   .:
     devDependencies:
       '@types/node':
-        specifier: ^25.5.0
+        specifier: ^25.5.2
         version: 25.6.0
       ansi-escapes:
         specifier: ^7.3.0
         version: 7.3.0
       clean-pkg-json:
-        specifier: ^1.4.1
+        specifier: ^1.4.2
         version: 1.4.2
       colorette:
         specifier: ^2.0.20
         version: 2.0.20
       lintroll:
-        specifier: ^1.30.0
-        version: 1.30.1(@types/estree@1.0.8)(@typescript-eslint/utils@8.59.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(jiti@2.6.1)(jsonc-eslint-parser@2.4.2)(typescript@6.0.3)
+        specifier: ^1.30.2
+        version: 1.30.2(@types/estree@1.0.8)(@typescript-eslint/utils@8.59.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(jiti@2.6.1)(jsonc-eslint-parser@2.4.2)(typescript@6.0.3)
       manten:
         specifier: ^2.0.0
         version: 2.0.0
@@ -33,10 +33,10 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1
       string-width:
-        specifier: ^8.2.0
-        version: 8.2.0
+        specifier: ^8.2.1
+        version: 8.2.1
       typescript:
-        specifier: ^6.0.2
+        specifier: ^6.0.3
         version: 6.0.3
       wrap-ansi:
         specifier: ^10.0.0
@@ -2043,8 +2043,8 @@ packages:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
 
-  lintroll@1.30.1:
-    resolution: {integrity: sha512-Faem2ZC68pr7XkBJPEl9VWdZEaIiGZLkHalm64doBpiueKSLJ0zRVxw+8SpdsmvngeUdpc9glKPruBpzg1WxXQ==}
+  lintroll@1.30.2:
+    resolution: {integrity: sha512-v5ecCdW2qnyjneYh7ymPkQEvMLlMj+mu6SwzOA8KBgHhqnKTKlBxCDH51YU53nW+Gg/gH6VXEkYkE74TcInnRg==}
     hasBin: true
 
   locate-path@6.0.0:
@@ -2560,8 +2560,8 @@ packages:
     resolution: {integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==}
     engines: {node: '>=18'}
 
-  string-width@8.2.0:
-    resolution: {integrity: sha512-6hJPQ8N0V0P3SNmP6h2J99RLuzrWz2gvT7VnK5tKvrNqJoyS9W4/Fb8mo31UiPvy00z7DQXkP2hnKBVav76thw==}
+  string-width@8.2.1:
+    resolution: {integrity: sha512-IIaP0g3iy9Cyy18w3M9YcaDudujEAVHKt3a3QJg1+sr/oX96TbaGUubG0hJyCjCBThFH+tFpcIyoUHUn1ogaLA==}
     engines: {node: '>=20'}
 
   string.prototype.matchall@4.0.12:
@@ -4850,7 +4850,7 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  lintroll@1.30.1(@types/estree@1.0.8)(@typescript-eslint/utils@8.59.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(jiti@2.6.1)(jsonc-eslint-parser@2.4.2)(typescript@6.0.3):
+  lintroll@1.30.2(@types/estree@1.0.8)(@typescript-eslint/utils@8.59.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(jiti@2.6.1)(jsonc-eslint-parser@2.4.2)(typescript@6.0.3):
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.7.1(eslint@9.39.4(jiti@2.6.1))
       '@eslint/js': 9.39.4
@@ -5658,7 +5658,7 @@ snapshots:
       get-east-asian-width: 1.5.0
       strip-ansi: 7.2.0
 
-  string-width@8.2.0:
+  string-width@8.2.1:
     dependencies:
       get-east-asian-width: 1.5.0
       strip-ansi: 7.2.0
@@ -5946,7 +5946,7 @@ snapshots:
   wrap-ansi@10.0.0:
     dependencies:
       ansi-styles: 6.2.3
-      string-width: 8.2.0
+      string-width: 8.2.1
       strip-ansi: 7.2.0
 
   wrap-ansi@9.0.2:

@@ -41,7 +41,7 @@
 			"default": "./dist/index.mjs"
 		}
 	},
-	"packageManager": "pnpm@10.33.1",
+	"packageManager": "pnpm@10.33.2",
 	"scripts": {
 		"build": "pkgroll --minify",
 		"lint": "lintroll --node --git --cache",
@@ -55,16 +55,16 @@
 		"node": ">=20.0.0"
 	},
 	"devDependencies": {
-		"@types/node": "^25.5.0",
+		"@types/node": "^25.5.2",
 		"ansi-escapes": "^7.3.0",
-		"clean-pkg-json": "^1.4.1",
+		"clean-pkg-json": "^1.4.2",
 		"colorette": "^2.0.20",
-		"lintroll": "^1.30.0",
+		"lintroll": "^1.30.2",
 		"manten": "^2.0.0",
 		"pkgroll": "^2.27.0",
 		"skills-npm": "^1.1.1",
-		"string-width": "^8.2.0",
-		"typescript": "^6.0.2",
+		"string-width": "^8.2.1",
+		"typescript": "^6.0.3",
 		"wrap-ansi": "^10.0.0"
 	}
 }
