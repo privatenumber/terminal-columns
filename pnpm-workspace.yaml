@@ -1,0 +1,15 @@
+# The build scripts are denied by decision: both packages ship platform
+# binaries as optionalDependencies and work without their postinstall scripts.
+allowBuilds:
+  esbuild: false
+  unrs-resolver: false
+permissions:
+  clean-pkg-json:
+    skills: true
+  lintroll:
+    skills: true
+  manten:
+    skills: true
+skills:
+  dirs:
+    - .agents/skills
